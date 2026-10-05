@@ -1,0 +1,66 @@
+name: Market Trend rescan
+
+on:
+  schedule:
+    # GitHub schedules use UTC. IST = UTC + 5:30. Monday to Friday.
+    - cron: "15 4 * * 1-5"    # 09:45 IST  full scan
+    - cron: "15 8 * * 1-5"    # 13:45 IST  full scan
+    - cron: "15 10 * * 1-5"   # 15:45 IST  full scan (after NSE close)
+    - cron: "15 15 * * 1-5"   # 20:45 IST  global refresh (US session)
+  workflow_dispatch:          # lets you run it any time from the Actions tab
+    inputs:
+      mode:
+        description: "full or global"
+        required: false
+        default: "full"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-trend
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Pick mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            M="${{ github.event.inputs.mode }}"
+          elif [ "$(date -u +%H)" -ge 13 ]; then
+            M="global"
+          else
+            M="full"
+          fi
+          echo "mode=$M" >> "$GITHUB_OUTPUT"
+          echo "Mode: $M"
+
+      - name: Run scan (retries once after 3 minutes if it fails)
+        run: |
+          ARGS=""; [ "${{ steps.mode.outputs.mode }}" = "global" ] && ARGS="--global"
+          python3 scan.py --check
+          python3 scan.py $ARGS || (echo "First attempt failed, retrying in 3 minutes"; sleep 180; python3 scan.py $ARGS)
+
+      - name: Update the website
+        run: python3 publish_site.py
+
+      - name: Show summary
+        run: cat out/summary.txt >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Save data and website
+        run: |
+          git config user.name  "market-trend-bot"
+          git config user.email "market-trend-bot@users.noreply.github.com"
+          git add docs raw.txt lt.txt idx.txt graw.txt cs.json scan_india.json scan_global.json decisions.json
+          git diff --cached --quiet && echo "No changes" || git commit -m "Rescan $(TZ=Asia/Kolkata date '+%d %b %Y %H:%M IST')"
+          git push
