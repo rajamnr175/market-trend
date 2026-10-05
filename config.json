@@ -1,0 +1,2483 @@
+{
+ "india": {
+  "stocks": [
+   "E2E",
+   "NETWEB",
+   "PARAS",
+   "STLTECH",
+   "HFCL",
+   "MTARTECH",
+   "KAYNES",
+   "ADANIENT",
+   "HCLTECH",
+   "TATACOMM",
+   "AVALON",
+   "MOSCHIP",
+   "BLUESTARCO",
+   "SYRMA",
+   "JNKINDIA",
+   "INDIAGLYCO",
+   "MRPL",
+   "GLAND",
+   "RPTECH",
+   "BSE",
+   "DRREDDY",
+   "GUJALKALI",
+   "GENUSPOWER",
+   "COFORGE",
+   "IRMENERGY",
+   "SOLARINDS",
+   "KRBL",
+   "BANDHANBNK",
+   "GRANULES",
+   "ASMTEC",
+   "RPOWER",
+   "IDEAFORGE",
+   "DMART",
+   "DALMIASUG",
+   "KOTAKBANK",
+   "ADANIPORTS",
+   "BEL",
+   "ONGC",
+   "TATASTEEL",
+   "SHRIRAMFIN",
+   "CGPOWER",
+   "ADANIENSOL",
+   "BHARTIARTL",
+   "LT",
+   "LTFOODS",
+   "AUROPHARMA",
+   "SUNPHARMA",
+   "EICHERMOT",
+   "ATGL",
+   "ZENTEC",
+   "INDIGO",
+   "SAIL",
+   "TATACONSUM",
+   "HINDALCO",
+   "ADANIGREEN",
+   "ANANTRAJ",
+   "TRENT",
+   "ARE&M",
+   "CIPLA",
+   "DRONACHRYA",
+   "TEJASNET",
+   "ESCORTS",
+   "ASIANPAINT",
+   "VEDL",
+   "DATAPATTNS",
+   "POLYCAB",
+   "VIKRAMSOLR",
+   "LAURUSLABS",
+   "ICICIBANK",
+   "TCS",
+   "TECHM",
+   "TITAGARH",
+   "SUZLON",
+   "KPITTECH",
+   "MARUTI",
+   "SBIN",
+   "DIVISLAB",
+   "ALPEXSOLAR",
+   "NH",
+   "M&M",
+   "RELIANCE",
+   "GLENMARK",
+   "BPCL",
+   "NTPC",
+   "DIXON",
+   "HINDCOPPER",
+   "ASHOKLEY",
+   "JSWSTEEL",
+   "CHAMBLFERT",
+   "EIDPARRY",
+   "HEROMOTOCO",
+   "NELCO",
+   "PERSISTENT",
+   "AXISBANK",
+   "JIOFIN",
+   "GULPOLY",
+   "BDL",
+   "ADANIPOWER",
+   "OIL",
+   "RCF",
+   "EXIDEIND",
+   "AMBUJACEM",
+   "ABB",
+   "HDFCBANK",
+   "OLAELEC",
+   "FACT",
+   "NIACL",
+   "TMPV",
+   "NFL",
+   "INDUSINDBK",
+   "BAJAJ-AUTO",
+   "DHANUKA",
+   "HINDUNILVR",
+   "GODREJIND",
+   "GROWW",
+   "TITAN",
+   "TATAPOWER",
+   "MAZDOCK",
+   "WIPRO",
+   "ETERNAL",
+   "TATATECH",
+   "APOLLOHOSP",
+   "BAJFINANCE",
+   "TATAELXSI",
+   "INFY",
+   "PIIND",
+   "MEESHO",
+   "CESC",
+   "KEC",
+   "COROMANDEL",
+   "DLINKINDIA",
+   "WAAREEENER",
+   "SPELS",
+   "WEL",
+   "DCMSHRIRAM",
+   "TATACHEM",
+   "UPL",
+   "HINDPETRO",
+   "EBGNG",
+   "COALINDIA",
+   "MCX",
+   "APLAPOLLO",
+   "KROSS",
+   "ASTRAMICRO",
+   "IRCTC",
+   "CASTROLIND",
+   "HINDZINC",
+   "AEL",
+   "CONCOR",
+   "ITC",
+   "FISCHER",
+   "AETHER",
+   "BHEL",
+   "PRAJIND",
+   "NESTLEIND",
+   "CDSL",
+   "DREAMFOLKS",
+   "HDFCLIFE",
+   "MARICO",
+   "PIDILITIND",
+   "NRBBEARING",
+   "HAL",
+   "SADHAV",
+   "BELRISE",
+   "ICICIPRULI",
+   "IEX",
+   "MFSL",
+   "CAMS",
+   "POLICYBZR"
+  ],
+  "bench": {
+   "SENSEX": "^BSESN",
+   "NIFTY500": "^CRSLDX",
+   "BANKNIFTY": "^NSEBANK",
+   "NIFTY": "^NSEI",
+   "IT": "^CNXIT",
+   "PHARMA": "^CNXPHARMA",
+   "INDIAVIX": "^INDIAVIX",
+   "MON100": "MON100.NS",
+   "NIFTYBEES": "NIFTYBEES.NS",
+   "SILVERBEES": "SILVERBEES.NS",
+   "CRUDEOIL": "CL=F",
+   "SILVER": "SI=F",
+   "USDINR": "INR=X"
+  },
+  "indices": [
+   "NIFTY 50",
+   "NIFTY 500",
+   "NIFTY MIDCAP 100",
+   "NIFTY SMALLCAP 100",
+   "NIFTY IT",
+   "NIFTY PHARMA",
+   "NIFTY HEALTHCARE",
+   "NIFTY BANK",
+   "NIFTY PSU BANK",
+   "NIFTY PRIVATE BANK",
+   "NIFTY FINANCIAL SERVICES",
+   "NIFTY CAPITAL MARKETS",
+   "NIFTY REALTY",
+   "NIFTY AUTO",
+   "NIFTY EV & NEW AGE AUTOMOTIVE",
+   "NIFTY METAL",
+   "NIFTY FMCG",
+   "NIFTY INDIA CONSUMPTION",
+   "NIFTY CONSUMER DURABLES",
+   "NIFTY ENERGY",
+   "NIFTY OIL & GAS",
+   "NIFTY INFRASTRUCTURE",
+   "NIFTY PSE",
+   "NIFTY CPSE",
+   "NIFTY MEDIA",
+   "NIFTY INDIA DEFENCE",
+   "NIFTY CHEMICALS",
+   "NIFTY COMMODITIES",
+   "NIFTY INDIA MANUFACTURING",
+   "NIFTY INDIA DIGITAL"
+  ]
+ },
+ "global": {
+  "yahoo": [
+   [
+    "GEMI",
+    "GEMI",
+    "Gemini Space Station, Inc."
+   ],
+   [
+    "CRCL",
+    "CRCL",
+    "Circle Internet Group"
+   ],
+   [
+    "COIN",
+    "COIN",
+    "Coinbase Global, Inc."
+   ],
+   [
+    "INTC",
+    "INTC",
+    "Intel Corporation"
+   ],
+   [
+    "INDO",
+    "INDO",
+    "Indonesia Energy Corporation Limited"
+   ],
+   [
+    "PLTR",
+    "PLTR",
+    "Palantir Technologies Inc."
+   ],
+   [
+    "HOOD",
+    "HOOD",
+    "Robinhood Markets, Inc."
+   ],
+   [
+    "TSLA",
+    "TSLA",
+    "Tesla, Inc."
+   ],
+   [
+    "LMT",
+    "LMT",
+    "Lockheed Martin Corporation"
+   ],
+   [
+    "MSTR",
+    "MSTR",
+    "Strategy Inc"
+   ],
+   [
+    "AMD",
+    "AMD",
+    "Advanced Micro Devices, Inc."
+   ],
+   [
+    "TSM",
+    "TSM",
+    "Taiwan Semiconductor Manufacturing"
+   ],
+   [
+    "MU",
+    "MU",
+    "Micron Technology, Inc."
+   ],
+   [
+    "SNPS",
+    "SNPS",
+    "Synopsys, Inc."
+   ],
+   [
+    "NVDA",
+    "NVDA",
+    "NVIDIA Corporation"
+   ],
+   [
+    "SNDK",
+    "SNDK",
+    "Sandisk Corporation"
+   ],
+   [
+    "WDC",
+    "WDC",
+    "Western Digital Corporation"
+   ],
+   [
+    "AVGO",
+    "AVGO",
+    "Broadcom Inc."
+   ],
+   [
+    "STX",
+    "STX",
+    "Seagate Technology Holdings plc"
+   ],
+   [
+    "RTX",
+    "RTX",
+    "RTX Corporation"
+   ],
+   [
+    "BE",
+    "BE",
+    "Bloom Energy Corporation"
+   ],
+   [
+    "SMCI",
+    "SMCI",
+    "Super Micro Computer, Inc."
+   ],
+   [
+    "RKT",
+    "RKT",
+    "Rocket Companies, Inc."
+   ],
+   [
+    "AAPL",
+    "AAPL",
+    "Apple Inc."
+   ],
+   [
+    "SBET",
+    "SBET",
+    "Sharplink, Inc."
+   ],
+   [
+    "CIFR",
+    "CIFR",
+    "Cipher Digital Inc."
+   ],
+   [
+    "TE",
+    "TE",
+    "T1 Energy Inc."
+   ],
+   [
+    "IREN",
+    "IREN",
+    "IREN Limited"
+   ],
+   [
+    "KTOS",
+    "KTOS",
+    "Kratos Defense & Security Solutions"
+   ],
+   [
+    "NOW",
+    "NOW",
+    "ServiceNow, Inc."
+   ],
+   [
+    "UMAC",
+    "UMAC",
+    "Unusual Machines, Inc."
+   ],
+   [
+    "DELL",
+    "DELL",
+    "Dell Technologies Inc."
+   ],
+   [
+    "ONDS",
+    "ONDS",
+    "Ondas Inc."
+   ],
+   [
+    "SNOW",
+    "SNOW",
+    "Snowflake Inc."
+   ],
+   [
+    "QQQ",
+    "QQQ",
+    "Invesco QQQ Trust"
+   ],
+   [
+    "NDX",
+    "^NDX",
+    "Nasdaq-100"
+   ],
+   [
+    "DJI",
+    "^DJI",
+    "Dow Jones Industrial Average"
+   ],
+   [
+    "XLE",
+    "XLE",
+    "Energy Select Sector SPDR ETF"
+   ],
+   [
+    "RUS2000",
+    "^RUT",
+    "Russell 2000"
+   ],
+   [
+    "SPX",
+    "^GSPC",
+    "S&P 500"
+   ],
+   [
+    "VIX",
+    "^VIX",
+    "CBOE Volatility Index"
+   ],
+   [
+    "ES1!",
+    "ES=F",
+    "E-mini S&P 500 futures"
+   ],
+   [
+    "NQ1!",
+    "NQ=F",
+    "E-mini Nasdaq-100 futures"
+   ],
+   [
+    "GOLD",
+    "GC=F",
+    "Gold futures"
+   ],
+   [
+    "DXY",
+    "DX-Y.NYB",
+    "US Dollar Index"
+   ],
+   [
+    "NATGAS",
+    "NG=F",
+    "Natural gas futures"
+   ],
+   [
+    "WTI",
+    "CL=F",
+    "WTI crude oil futures"
+   ],
+   [
+    "BTC1!",
+    "BTC=F",
+    "CME Bitcoin futures"
+   ],
+   [
+    "COPPER",
+    "HG=F",
+    "Copper futures"
+   ],
+   [
+    "SILVER",
+    "SI=F",
+    "Silver futures"
+   ],
+   [
+    "USDINR",
+    "INR=X",
+    "USD/INR"
+   ],
+   [
+    "USDEUR",
+    "EUR=X",
+    "USD/EUR"
+   ],
+   [
+    "EURINR",
+    "EURINR=X",
+    "EUR/INR"
+   ],
+   [
+    "ETH1!",
+    "ETH=F",
+    "CME Ether futures"
+   ],
+   [
+    "EURUSD",
+    "EURUSD=X",
+    "EUR/USD"
+   ],
+   [
+    "US2Y",
+    "2YY=F",
+    "US 2-year yield (futures)"
+   ],
+   [
+    "US13W",
+    "^IRX",
+    "US 3-month T-bill yield"
+   ],
+   [
+    "USDJPY",
+    "JPY=X",
+    "USD/JPY"
+   ],
+   [
+    "US10Y",
+    "^TNX",
+    "US 10-year Treasury yield"
+   ],
+   [
+    "US5Y",
+    "^FVX",
+    "US 5-year Treasury yield"
+   ],
+   [
+    "US30Y",
+    "^TYX",
+    "US 30-year Treasury yield"
+   ],
+   [
+    "YM1!",
+    "YM=F",
+    "Mini Dow Jones Indus.-$5 Dec 26"
+   ],
+   [
+    "NIKKEI",
+    "^N225",
+    "Nikkei 225"
+   ],
+   [
+    "KOSPI",
+    "^KS11",
+    "KOSPI Composite Index"
+   ],
+   [
+    "AMZN",
+    "AMZN",
+    "Amazon.com, Inc."
+   ],
+   [
+    "GOOGL",
+    "GOOGL",
+    "Alphabet Inc."
+   ],
+   [
+    "MSFT",
+    "MSFT",
+    "Microsoft Corporation"
+   ],
+   [
+    "META",
+    "META",
+    "Meta Platforms, Inc."
+   ],
+   [
+    "SPCX",
+    "SPCX",
+    "Space Exploration Technologies Corp."
+   ],
+   [
+    "DRAM",
+    "DRAM",
+    "Roundhill Memory ETF"
+   ],
+   [
+    "SAMSUNG",
+    "005930.KS",
+    "Samsung Electronics Co., Ltd."
+   ],
+   [
+    "SKHYNIX",
+    "000660.KS",
+    "SK hynix Inc."
+   ],
+   [
+    "CBRS",
+    "CBRS",
+    "Cerebras Systems Inc."
+   ],
+   [
+    "ASML",
+    "ASML",
+    "ASML Holding N.V."
+   ],
+   [
+    "HPE",
+    "HPE",
+    "Hewlett Packard Enterprise Company"
+   ],
+   [
+    "MOD",
+    "MOD",
+    "Modine Manufacturing Company"
+   ],
+   [
+    "VRT",
+    "VRT",
+    "Vertiv Holdings Co"
+   ],
+   [
+    "ETN",
+    "ETN",
+    "Eaton Corporation plc"
+   ],
+   [
+    "NOK",
+    "NOK",
+    "Nokia Oyj"
+   ],
+   [
+    "CSCO",
+    "CSCO",
+    "Cisco Systems, Inc."
+   ],
+   [
+    "ANET",
+    "ANET",
+    "Arista Networks, Inc."
+   ],
+   [
+    "CRDO",
+    "CRDO",
+    "Credo Technology Group Holding Ltd"
+   ],
+   [
+    "MRVL",
+    "MRVL",
+    "Marvell Technology, Inc."
+   ],
+   [
+    "CIEN",
+    "CIEN",
+    "Ciena Corporation"
+   ],
+   [
+    "APLD",
+    "APLD",
+    "Applied Digital Corporation"
+   ],
+   [
+    "CRWV",
+    "CRWV",
+    "CoreWeave, Inc."
+   ],
+   [
+    "NBIS",
+    "NBIS",
+    "Nebius Group N.V."
+   ],
+   [
+    "SIVE",
+    "SIVE.ST",
+    "Sivers Semiconductors AB (publ)"
+   ],
+   [
+    "AXTI",
+    "AXTI",
+    "AXT, Inc."
+   ],
+   [
+    "GLW",
+    "GLW",
+    "Corning Incorporated"
+   ],
+   [
+    "AAOI",
+    "AAOI",
+    "Applied Optoelectronics, Inc."
+   ],
+   [
+    "LITE",
+    "LITE",
+    "Lumentum Holdings Inc."
+   ],
+   [
+    "EUV",
+    "EUV",
+    "Corgi Lithography & Semiconductor Photonics ETF"
+   ],
+   [
+    "EOSE",
+    "EOSE",
+    "Eos Energy Enterprises, Inc."
+   ],
+   [
+    "FCEL",
+    "FCEL",
+    "FuelCell Energy, Inc."
+   ],
+   [
+    "FLNC",
+    "FLNC",
+    "Fluence Energy, Inc."
+   ],
+   [
+    "NEE",
+    "NEE",
+    "NextEra Energy, Inc."
+   ],
+   [
+    "AAON",
+    "AAON",
+    "AAON, Inc."
+   ],
+   [
+    "VST",
+    "VST",
+    "Vistra Corp."
+   ],
+   [
+    "CEG",
+    "CEG",
+    "Constellation Energy Corporation"
+   ],
+   [
+    "GEV",
+    "GEV",
+    "GE Vernova Inc."
+   ],
+   [
+    "FTNT",
+    "FTNT",
+    "Fortinet, Inc."
+   ],
+   [
+    "ORCL",
+    "ORCL",
+    "Oracle Corporation"
+   ],
+   [
+    "ADBE",
+    "ADBE",
+    "Adobe Inc."
+   ],
+   [
+    "DDOG",
+    "DDOG",
+    "Datadog, Inc."
+   ],
+   [
+    "CRWD",
+    "CRWD",
+    "CrowdStrike Holdings, Inc."
+   ],
+   [
+    "USAS",
+    "USAS",
+    "Americas Gold and Silver Corporation"
+   ],
+   [
+    "USAR",
+    "USAR",
+    "USA Rare Earth, Inc."
+   ],
+   [
+    "MP",
+    "MP",
+    "MP Materials Corp."
+   ],
+   [
+    "RKLB",
+    "RKLB",
+    "Rocket Lab Corporation"
+   ],
+   [
+    "EWY",
+    "EWY",
+    "iShares MSCI South Korea ETF"
+   ],
+   [
+    "HON",
+    "HON",
+    "Honeywell International Inc."
+   ],
+   [
+    "TSEM",
+    "TSEM",
+    "Tower Semiconductor Ltd."
+   ],
+   [
+    "GE",
+    "GE",
+    "GE Aerospace"
+   ],
+   [
+    "GOOG",
+    "GOOG",
+    "Alphabet Inc."
+   ],
+   [
+    "CAT",
+    "CAT",
+    "Caterpillar Inc."
+   ],
+   [
+    "LDI",
+    "LDI",
+    "loanDepot, Inc."
+   ],
+   [
+    "AMC",
+    "AMC",
+    "AMC Entertainment Holdings, Inc."
+   ],
+   [
+    "ARBK",
+    "ARBK",
+    "Argo Blockchain plc"
+   ],
+   [
+    "SNAP",
+    "SNAP",
+    "Snap Inc."
+   ],
+   [
+    "WEN",
+    "WEN",
+    "The Wendy's Company"
+   ],
+   [
+    "RUM",
+    "RUM",
+    "RUM Group Inc."
+   ],
+   [
+    "DJT",
+    "DJT",
+    "Trump Media & Technology Group Corp."
+   ],
+   [
+    "OWL",
+    "OWL",
+    "Blue Owl Capital Inc."
+   ],
+   [
+    "LAR",
+    "LAR",
+    "Lithium Argentina AG"
+   ],
+   [
+    "PURR",
+    "PURR",
+    "Hyperliquid Strategies Inc."
+   ],
+   [
+    "NU",
+    "NU",
+    "Nu Holdings Ltd."
+   ],
+   [
+    "LYFT",
+    "LYFT",
+    "Lyft, Inc."
+   ],
+   [
+    "F",
+    "F",
+    "Ford Motor Company"
+   ],
+   [
+    "RIVN",
+    "RIVN",
+    "Rivian Automotive, Inc."
+   ],
+   [
+    "SOFI",
+    "SOFI",
+    "SoFi Technologies, Inc."
+   ],
+   [
+    "GME",
+    "GME",
+    "GameStop Corp."
+   ],
+   [
+    "T",
+    "T",
+    "AT&T Inc."
+   ],
+   [
+    "DKNG",
+    "DKNG",
+    "DraftKings Inc."
+   ],
+   [
+    "HIMS",
+    "HIMS",
+    "Hims & Hers Health, Inc."
+   ],
+   [
+    "JD",
+    "JD",
+    "JD.com, Inc."
+   ],
+   [
+    "DB",
+    "DB",
+    "Deutsche Bank Aktiengesellschaft"
+   ],
+   [
+    "UPST",
+    "UPST",
+    "Upstart Holdings, Inc."
+   ],
+   [
+    "Z",
+    "Z",
+    "Zillow Group, Inc."
+   ],
+   [
+    "HAL",
+    "HAL",
+    "Halliburton Company"
+   ],
+   [
+    "PBF",
+    "PBF",
+    "PBF Energy Inc."
+   ],
+   [
+    "NKE",
+    "NKE",
+    "NIKE, Inc."
+   ],
+   [
+    "PYPL",
+    "PYPL",
+    "PayPal Holdings, Inc."
+   ],
+   [
+    "MRNA",
+    "MRNA",
+    "Moderna, Inc."
+   ],
+   [
+    "VZ",
+    "VZ",
+    "Verizon Communications Inc."
+   ],
+   [
+    "BAC",
+    "BAC",
+    "Bank of America Corporation"
+   ],
+   [
+    "UL",
+    "UL",
+    "Unilever PLC"
+   ],
+   [
+    "SLB",
+    "SLB",
+    "SLB N.V."
+   ],
+   [
+    "BKR",
+    "BKR",
+    "Baker Hughes Company"
+   ],
+   [
+    "ACM",
+    "ACM",
+    "AECOM"
+   ],
+   [
+    "UBER",
+    "UBER",
+    "Uber Technologies, Inc."
+   ],
+   [
+    "IR",
+    "IR",
+    "Ingersoll Rand Inc."
+   ],
+   [
+    "OKLO",
+    "OKLO",
+    "Oklo Inc."
+   ],
+   [
+    "MDT",
+    "MDT",
+    "Medtronic plc"
+   ],
+   [
+    "SQ",
+    "XYZ",
+    "Block, Inc."
+   ],
+   [
+    "AMBA",
+    "AMBA",
+    "Ambarella, Inc."
+   ],
+   [
+    "KO",
+    "KO",
+    "The Coca-Cola Company"
+   ],
+   [
+    "WFC",
+    "WFC",
+    "Wells Fargo & Company"
+   ],
+   [
+    "GM",
+    "GM",
+    "General Motors Company"
+   ],
+   [
+    "NFLX",
+    "NFLX",
+    "Netflix, Inc."
+   ],
+   [
+    "ABT",
+    "ABT",
+    "Abbott Laboratories"
+   ],
+   [
+    "SCHW",
+    "SCHW",
+    "The Charles Schwab Corporation"
+   ],
+   [
+    "SMTOY",
+    "SMTOY",
+    "Sumitomo Electric Industries, Ltd."
+   ],
+   [
+    "NDAQ",
+    "NDAQ",
+    "Nasdaq, Inc."
+   ],
+   [
+    "CL",
+    "CL",
+    "Colgate-Palmolive Company"
+   ],
+   [
+    "HQY",
+    "HQY",
+    "HealthEquity, Inc."
+   ],
+   [
+    "IBKR",
+    "IBKR",
+    "Interactive Brokers Group, Inc."
+   ],
+   [
+    "CVS",
+    "CVS",
+    "CVS Health Corporation"
+   ],
+   [
+    "COPX",
+    "COPX",
+    "Global X Copper Miners ETF"
+   ],
+   [
+    "SBUX",
+    "SBUX",
+    "Starbucks Corporation"
+   ],
+   [
+    "DIS",
+    "DIS",
+    "The Walt Disney Company"
+   ],
+   [
+    "DG",
+    "DG",
+    "Dollar General Corporation"
+   ],
+   [
+    "UPS",
+    "UPS",
+    "United Parcel Service, Inc."
+   ],
+   [
+    "ZM",
+    "ZM",
+    "Zoom Communications, Inc."
+   ],
+   [
+    "WMT",
+    "WMT",
+    "Walmart Inc."
+   ],
+   [
+    "BX",
+    "BX",
+    "Blackstone Inc."
+   ],
+   [
+    "MRK",
+    "MRK",
+    "Merck & Co., Inc."
+   ],
+   [
+    "LULU",
+    "LULU",
+    "lululemon athletica inc."
+   ],
+   [
+    "ROKU",
+    "ROKU",
+    "Roku, Inc."
+   ],
+   [
+    "APO",
+    "APO",
+    "Apollo Global Management, Inc."
+   ],
+   [
+    "C",
+    "C",
+    "Citigroup Inc."
+   ],
+   [
+    "ABNB",
+    "ABNB",
+    "Airbnb, Inc."
+   ],
+   [
+    "PG",
+    "PG",
+    "The Procter & Gamble Company"
+   ],
+   [
+    "PEP",
+    "PEP",
+    "PepsiCo, Inc."
+   ],
+   [
+    "ZS",
+    "ZS",
+    "Zscaler, Inc."
+   ],
+   [
+    "SYNA",
+    "SYNA",
+    "Synaptics Incorporated"
+   ],
+   [
+    "XLV",
+    "XLV",
+    "State Street Health Care Select Sector SPDR ETF"
+   ],
+   [
+    "XOM",
+    "XOM",
+    "ExxonMobil Holdings Corporation"
+   ],
+   [
+    "LSCC",
+    "LSCC",
+    "Lattice Semiconductor Corporation"
+   ],
+   [
+    "NUGT",
+    "NUGT",
+    "Direxion Daily Gold Miners Index Bull 2X Shares"
+   ],
+   [
+    "PSX",
+    "PSX",
+    "Phillips 66"
+   ],
+   [
+    "AMT",
+    "AMT",
+    "American Tower Corporation"
+   ],
+   [
+    "CVX",
+    "CVX",
+    "Chevron Corporation"
+   ],
+   [
+    "CRM",
+    "CRM",
+    "Salesforce, Inc."
+   ],
+   [
+    "LOW",
+    "LOW",
+    "Lowe's Companies, Inc."
+   ],
+   [
+    "MS",
+    "MS",
+    "Morgan Stanley"
+   ],
+   [
+    "ABBV",
+    "ABBV",
+    "AbbVie Inc."
+   ],
+   [
+    "BA",
+    "BA",
+    "The Boeing Company"
+   ],
+   [
+    "JNJ",
+    "JNJ",
+    "Johnson & Johnson"
+   ],
+   [
+    "QCOM",
+    "QCOM",
+    "QUALCOMM Incorporated"
+   ],
+   [
+    "VLO",
+    "VLO",
+    "Valero Energy Corporation"
+   ],
+   [
+    "CLH",
+    "CLH",
+    "Clean Harbors, Inc."
+   ],
+   [
+    "MCD",
+    "MCD",
+    "McDonald's Corporation"
+   ],
+   [
+    "JPM",
+    "JPM",
+    "JPMorgan Chase & Co."
+   ],
+   [
+    "AXP",
+    "AXP",
+    "American Express Company"
+   ],
+   [
+    "HD",
+    "HD",
+    "The Home Depot, Inc."
+   ],
+   [
+    "V",
+    "V",
+    "Visa Inc."
+   ],
+   [
+    "FDX",
+    "FDX",
+    "FedEx Corporation"
+   ],
+   [
+    "IBM",
+    "IBM",
+    "International Business Machines Corporation"
+   ],
+   [
+    "LRCX",
+    "LRCX",
+    "Lam Research Corporation"
+   ],
+   [
+    "MSI",
+    "MSI",
+    "Motorola Solutions, Inc."
+   ],
+   [
+    "ROK",
+    "ROK",
+    "Rockwell Automation, Inc."
+   ],
+   [
+    "MA",
+    "MA",
+    "Mastercard Incorporated"
+   ],
+   [
+    "TMO",
+    "TMO",
+    "Thermo Fisher Scientific Inc."
+   ],
+   [
+    "SPOT",
+    "SPOT",
+    "Spotify Technology S.A."
+   ],
+   [
+    "DE",
+    "DE",
+    "Deere & Company"
+   ],
+   [
+    "SPY",
+    "SPY",
+    "State Street SPDR S&P 500 ETF Trust"
+   ],
+   [
+    "COST",
+    "COST",
+    "Costco Wholesale Corporation"
+   ],
+   [
+    "URI",
+    "URI",
+    "United Rentals, Inc."
+   ],
+   [
+    "BLK",
+    "BLK",
+    "BlackRock, Inc."
+   ],
+   [
+    "LLY",
+    "LLY",
+    "Eli Lilly and Company"
+   ],
+   [
+    "GS",
+    "GS",
+    "The Goldman Sachs Group, Inc."
+   ],
+   [
+    "AZO",
+    "AZO",
+    "AutoZone, Inc."
+   ],
+   [
+    "BRK.A",
+    "BRK-A",
+    "Berkshire Hathaway Inc."
+   ],
+   [
+    "BULL",
+    "BULL",
+    "Webull Corporation"
+   ],
+   [
+    "UMC",
+    "UMC",
+    "United Microelectronics Corporation"
+   ],
+   [
+    "MRAM",
+    "MRAM",
+    "Everspin Technologies, Inc."
+   ],
+   [
+    "LUNR",
+    "LUNR",
+    "Intuitive Machines, Inc."
+   ],
+   [
+    "PL",
+    "PL",
+    "Planet Labs PBC"
+   ],
+   [
+    "SYM",
+    "SYM",
+    "Symbotic Inc."
+   ],
+   [
+    "AOSL",
+    "AOSL",
+    "Alpha and Omega Semiconductor Limited"
+   ],
+   [
+    "WOLF",
+    "WOLF",
+    "Wolfspeed, Inc."
+   ],
+   [
+    "PENG",
+    "PENG",
+    "Penguin Solutions, Inc."
+   ],
+   [
+    "GFS",
+    "GFS",
+    "GLOBALFOUNDRIES Inc."
+   ],
+   [
+    "IFX",
+    "IFX.DE",
+    "Infineon Technologies AG"
+   ],
+   [
+    "MCHP",
+    "MCHP",
+    "Microchip Technology Incorporated"
+   ],
+   [
+    "AEHR",
+    "AEHR",
+    "Aehr Test Systems, Inc."
+   ],
+   [
+    "ASTS",
+    "ASTS",
+    "AST SpaceMobile, Inc."
+   ],
+   [
+    "ON",
+    "ON",
+    "ON Semiconductor Corporation"
+   ],
+   [
+    "SOI",
+    "SOI.PA",
+    "Soitec SA"
+   ],
+   [
+    "8147.TW",
+    "8147.TWO",
+    "Nextronics Engineering Corp."
+   ],
+   [
+    "DOCN",
+    "DOCN",
+    "DigitalOcean Holdings, Inc."
+   ],
+   [
+    "ERIE",
+    "ERIE",
+    "Erie Indemnity Company"
+   ],
+   [
+    "TXN",
+    "TXN",
+    "Texas Instruments Incorporated"
+   ],
+   [
+    "NXPI",
+    "NXPI",
+    "NXP Semiconductors N.V."
+   ],
+   [
+    "ISRG",
+    "ISRG",
+    "Intuitive Surgical, Inc."
+   ],
+   [
+    "ARM",
+    "ARM",
+    "Arm Holdings plc"
+   ],
+   [
+    "CDNS",
+    "CDNS",
+    "Cadence Design Systems, Inc."
+   ],
+   [
+    "COHR",
+    "COHR",
+    "Coherent Corp."
+   ],
+   [
+    "AXON",
+    "AXON",
+    "Axon Enterprise, Inc."
+   ],
+   [
+    "SITM",
+    "SITM",
+    "SiTime Corporation"
+   ],
+   [
+    "6830.TW",
+    "6830.TW",
+    "Msscorps Co., Ltd."
+   ],
+   [
+    "6315.T",
+    "6315.T",
+    "TOWA Corporation"
+   ],
+   [
+    "HUMN",
+    "HUMN",
+    "Roundhill Humanoid Robotics ETF"
+   ],
+   [
+    "MARS",
+    "MARS",
+    "Roundhill Space & Technology ETF"
+   ],
+   [
+    "MAGS",
+    "MAGS",
+    "Roundhill Magnificent Seven ETF"
+   ],
+   [
+    "CHAT",
+    "CHAT",
+    "Roundhill Generative AI & Technology ETF"
+   ],
+   [
+    "SMTC",
+    "SMTC",
+    "Semtech Corporation"
+   ],
+   [
+    "SMH",
+    "SMH",
+    "VanEck Semiconductor ETF"
+   ],
+   [
+    "3363.TW",
+    "3363.TWO",
+    "FOCI Fiber Optic Communications, Inc."
+   ],
+   [
+    "UWMC",
+    "UWMC",
+    "UWM Holdings Corporation"
+   ]
+  ],
+  "crypto": [
+   [
+    "SOL",
+    "bn:SOL",
+    "Solana"
+   ],
+   [
+    "BNB",
+    "bn:BNB",
+    "BNB"
+   ],
+   [
+    "ETH",
+    "bn:ETH",
+    "Ethereum"
+   ],
+   [
+    "BTC",
+    "bn:BTC",
+    "Bitcoin"
+   ],
+   [
+    "XRP",
+    "bn:XRP",
+    "XRP"
+   ],
+   [
+    "DOGE",
+    "bn:DOGE",
+    "Dogecoin"
+   ],
+   [
+    "AVAX",
+    "bn:AVAX",
+    "Avalanche"
+   ],
+   [
+    "ADA",
+    "bn:ADA",
+    "Cardano"
+   ],
+   [
+    "TRX",
+    "bn:TRX",
+    "Tron"
+   ],
+   [
+    "LINK",
+    "bn:LINK",
+    "Chainlink"
+   ],
+   [
+    "DOT",
+    "bn:DOT",
+    "Polkadot"
+   ],
+   [
+    "LTC",
+    "bn:LTC",
+    "Litecoin"
+   ],
+   [
+    "BCH",
+    "bn:BCH",
+    "Bitcoin Cash"
+   ],
+   [
+    "XLM",
+    "bn:XLM",
+    "Stellar"
+   ],
+   [
+    "ETC",
+    "bn:ETC",
+    "Ethereum Classic"
+   ],
+   [
+    "ZEC",
+    "bn:ZEC",
+    "Zcash"
+   ],
+   [
+    "HBAR",
+    "bn:HBAR",
+    "Hedera"
+   ],
+   [
+    "XMR",
+    "bl:XMR",
+    "Monero"
+   ],
+   [
+    "APT",
+    "bn:APT",
+    "Aptos"
+   ],
+   [
+    "SUI",
+    "bn:SUI",
+    "Sui"
+   ],
+   [
+    "LDO",
+    "bn:LDO",
+    "Lido DAO"
+   ],
+   [
+    "UNI",
+    "bn:UNI",
+    "Uniswap"
+   ],
+   [
+    "NEAR",
+    "bn:NEAR",
+    "NEAR Protocol"
+   ],
+   [
+    "AAVE",
+    "bn:AAVE",
+    "Aave"
+   ],
+   [
+    "CRV",
+    "bn:CRV",
+    "Curve DAO"
+   ],
+   [
+    "ONDO",
+    "bn:ONDO",
+    "Ondo"
+   ],
+   [
+    "EIGEN",
+    "bn:EIGEN",
+    "EigenLayer"
+   ],
+   [
+    "ENA",
+    "bn:ENA",
+    "Ethena"
+   ],
+   [
+    "ETHFI",
+    "bn:ETHFI",
+    "ether.fi"
+   ],
+   [
+    "PENDLE",
+    "bn:PENDLE",
+    "Pendle"
+   ],
+   [
+    "INJ",
+    "bn:INJ",
+    "Injective"
+   ],
+   [
+    "ENS",
+    "bn:ENS",
+    "Ethereum Name Service"
+   ],
+   [
+    "RUNE",
+    "bn:RUNE",
+    "THORChain"
+   ],
+   [
+    "STACKS",
+    "bn:STX",
+    "Stacks"
+   ],
+   [
+    "OP",
+    "bn:OP",
+    "Optimism"
+   ],
+   [
+    "MNT",
+    "bs:MNT",
+    "Mantle"
+   ],
+   [
+    "LINEA",
+    "bn:LINEA",
+    "Linea"
+   ],
+   [
+    "ZK",
+    "bn:ZK",
+    "ZKsync"
+   ],
+   [
+    "STRK",
+    "bn:STRK",
+    "Starknet"
+   ],
+   [
+    "ARB",
+    "bn:ARB",
+    "Arbitrum"
+   ],
+   [
+    "RENDER",
+    "bn:RENDER",
+    "Render"
+   ],
+   [
+    "TIA",
+    "bn:TIA",
+    "Celestia"
+   ],
+   [
+    "SEI",
+    "bn:SEI",
+    "Sei"
+   ],
+   [
+    "AR",
+    "bn:AR",
+    "Arweave"
+   ],
+   [
+    "FIL",
+    "bn:FIL",
+    "Filecoin"
+   ],
+   [
+    "TAO",
+    "bn:TAO",
+    "Bittensor"
+   ],
+   [
+    "ARKM",
+    "bn:ARKM",
+    "Arkham"
+   ],
+   [
+    "GRT",
+    "bn:GRT",
+    "The Graph"
+   ],
+   [
+    "FET",
+    "bn:FET",
+    "Artificial Superintelligence Alliance"
+   ],
+   [
+    "IO",
+    "bn:IO",
+    "io.net"
+   ],
+   [
+    "AKT",
+    "bl:AKT",
+    "Akash Network"
+   ],
+   [
+    "VIRTUAL",
+    "bn:VIRTUAL",
+    "Virtuals Protocol"
+   ],
+   [
+    "AIXBT",
+    "bn:AIXBT",
+    "aixbt"
+   ],
+   [
+    "GRASS",
+    "bs:GRASS",
+    "Grass"
+   ],
+   [
+    "ATH",
+    "bs:ATH",
+    "Aethir"
+   ],
+   [
+    "GRIFFAIN",
+    "bl:GRIFFAIN",
+    "Griffain"
+   ],
+   [
+    "ZEREBRO",
+    "bs:ZEREBRO",
+    "Zerebro"
+   ],
+   [
+    "GOAT",
+    "bs:GOAT",
+    "Goatseus Maximus"
+   ],
+   [
+    "COOKIE",
+    "bn:COOKIE",
+    "Cookie DAO"
+   ],
+   [
+    "ACT",
+    "bn:ACT",
+    "Act I: The AI Prophecy"
+   ],
+   [
+    "PIPPIN",
+    "bl:PIPPIN",
+    "Pippin"
+   ],
+   [
+    "CHILLGUY",
+    "bs:CHILLGUY",
+    "Just a chill guy"
+   ],
+   [
+    "PYTH",
+    "bn:PYTH",
+    "Pyth Network"
+   ],
+   [
+    "WLD",
+    "bn:WLD",
+    "Worldcoin"
+   ],
+   [
+    "JUP",
+    "bn:JUP",
+    "Jupiter"
+   ],
+   [
+    "DRIFT",
+    "bs:DRIFT",
+    "Drift"
+   ],
+   [
+    "KMNO",
+    "bn:KMNO",
+    "Kamino"
+   ],
+   [
+    "RAY",
+    "bn:RAY",
+    "Raydium"
+   ],
+   [
+    "JTO",
+    "bn:JTO",
+    "Jito"
+   ],
+   [
+    "TNSR",
+    "bn:TNSR",
+    "Tensor"
+   ],
+   [
+    "MOVE",
+    "bn:MOVE",
+    "Movement"
+   ],
+   [
+    "DEEP",
+    "bs:DEEP",
+    "DeepBook"
+   ],
+   [
+    "BERA",
+    "bn:BERA",
+    "Berachain"
+   ],
+   [
+    "S",
+    "bn:S",
+    "Sonic"
+   ],
+   [
+    "VVV",
+    "bs:VVV",
+    "Venice Token"
+   ],
+   [
+    "ASTER",
+    "bn:ASTER",
+    "Aster"
+   ],
+   [
+    "PENGU",
+    "bn:PENGU",
+    "Pudgy Penguins"
+   ],
+   [
+    "ZRO",
+    "bn:ZRO",
+    "LayerZero"
+   ],
+   [
+    "BONK",
+    "bn:BONK",
+    "Bonk"
+   ],
+   [
+    "FARTCOIN",
+    "bl:FARTCOIN",
+    "Fartcoin"
+   ],
+   [
+    "POPCAT",
+    "bs:POPCAT",
+    "Popcat"
+   ],
+   [
+    "WIF",
+    "bn:WIF",
+    "dogwifhat"
+   ],
+   [
+    "FLOKI",
+    "bn:FLOKI",
+    "Floki"
+   ],
+   [
+    "PEPE",
+    "bn:PEPE",
+    "Pepe"
+   ],
+   [
+    "BROCCOLI",
+    "bl:BROCCOLI",
+    "Broccoli"
+   ],
+   [
+    "USELESS",
+    "bl:USELESS",
+    "Useless Coin"
+   ],
+   [
+    "PUMP",
+    "bn:PUMP",
+    "Pump.fun"
+   ],
+   [
+    "TRUMP",
+    "bn:TRUMP",
+    "Official Trump"
+   ],
+   [
+    "SPX6900",
+    "bs:SPX",
+    "SPX6900"
+   ],
+   [
+    "LIT",
+    "bs:LIT",
+    "Lighter"
+   ],
+   [
+    "SWELL",
+    "bs:SWELL",
+    "Swell"
+   ],
+   [
+    "CHIP",
+    "bn:CHIP",
+    "CHIP"
+   ],
+   [
+    "FLUID",
+    "bs:FLUID",
+    "Fluid"
+   ],
+   [
+    "CASHCAT",
+    "bl:CASHCAT",
+    "CASHCAT"
+   ],
+   [
+    "SUPER",
+    "bn:SUPER",
+    "SuperVerse"
+   ],
+   [
+    "WOO",
+    "bn:WOO",
+    "WOO"
+   ],
+   [
+    "RSR",
+    "bn:RSR",
+    "Reserve Rights"
+   ],
+   [
+    "ZIG",
+    "bs:ZIG",
+    "ZIGChain"
+   ],
+   [
+    "PRIME",
+    "bs:PRIME",
+    "Echelon Prime"
+   ],
+   [
+    "CPOOL",
+    "bs:CPOOL",
+    "Clearpool"
+   ],
+   [
+    "HYPE",
+    "bs:HYPE",
+    "Hyperliquid"
+   ],
+   [
+    "ETHBTC",
+    "bnp:ETHBTC",
+    "ETH/BTC ratio"
+   ],
+   [
+    "SOLBTC",
+    "bnp:SOLBTC",
+    "SOL/BTC ratio"
+   ],
+   [
+    "SOLETH",
+    "bnp:SOLETH",
+    "SOL/ETH ratio"
+   ]
+  ],
+  "ycrypto": {
+   "SOL": "SOL-USD",
+   "BNB": "BNB-USD",
+   "ETH": "ETH-USD",
+   "BTC": "BTC-USD",
+   "XRP": "XRP-USD",
+   "DOGE": "DOGE-USD",
+   "AVAX": "AVAX-USD",
+   "ADA": "ADA-USD",
+   "TRX": "TRX-USD",
+   "LINK": "LINK-USD",
+   "DOT": "DOT-USD",
+   "LTC": "LTC-USD",
+   "BCH": "BCH-USD",
+   "XLM": "XLM-USD",
+   "ETC": "ETC-USD",
+   "ZEC": "ZEC-USD",
+   "HBAR": "HBAR-USD",
+   "LDO": "LDO-USD",
+   "NEAR": "NEAR-USD",
+   "AAVE": "AAVE-USD",
+   "CRV": "CRV-USD",
+   "ONDO": "ONDO-USD",
+   "EIGEN": "EIGEN-USD",
+   "ENA": "ENA-USD",
+   "ETHFI": "ETHFI-USD",
+   "PENDLE": "PENDLE-USD",
+   "INJ": "INJ-USD",
+   "ENS": "ENS-USD",
+   "RUNE": "RUNE-USD",
+   "OP": "OP-USD",
+   "LINEA": "LINEA-USD",
+   "STRK": "STRK-USD",
+   "RENDER": "RENDER-USD",
+   "TIA": "TIA-USD",
+   "SEI": "SEI-USD",
+   "AR": "AR-USD",
+   "FIL": "FIL-USD",
+   "ARKM": "ARKM-USD",
+   "FET": "FET-USD",
+   "AKT": "AKT-USD",
+   "VIRTUAL": "VIRTUAL-USD",
+   "AIXBT": "AIXBT-USD",
+   "GRIFFAIN": "GRIFFAIN-USD",
+   "ZEREBRO": "ZEREBRO-USD",
+   "PIPPIN": "PIPPIN-USD",
+   "CHILLGUY": "CHILLGUY-USD",
+   "PYTH": "PYTH-USD",
+   "WLD": "WLD-USD",
+   "KMNO": "KMNO-USD",
+   "RAY": "RAY-USD",
+   "JTO": "JTO-USD",
+   "TNSR": "TNSR-USD",
+   "BERA": "BERA-USD",
+   "BONK": "BONK-USD",
+   "FARTCOIN": "FARTCOIN-USD",
+   "WIF": "WIF-USD",
+   "FLOKI": "FLOKI-USD",
+   "SWELL": "SWELL-USD",
+   "FLUID": "FLUID-USD",
+   "CASHCAT": "CASHCAT-USD",
+   "WOO": "WOO-USD",
+   "RSR": "RSR-USD",
+   "ZIG": "ZIG-USD",
+   "CPOOL": "CPOOL-USD",
+   "APT": "APT21794-USD",
+   "SUI": "SUI20947-USD",
+   "UNI": "UNI7083-USD",
+   "ZK": "ZK24091-USD",
+   "ARB": "ARB11841-USD",
+   "TAO": "TAO22974-USD",
+   "GRASS": "GRASS32956-USD",
+   "JUP": "JUP29210-USD",
+   "DRIFT": "DRIFT31278-USD",
+   "MOVE": "MOVE32452-USD",
+   "DEEP": "DEEP33391-USD",
+   "ASTER": "ASTER36341-USD",
+   "PENGU": "PENGU34466-USD",
+   "PEPE": "PEPE24478-USD",
+   "PUMP": "PUMP36507-USD",
+   "TRUMP": "TRUMP35336-USD",
+   "SPX6900": "SPX28081-USD",
+   "SUPER": "SUPER8290-USD",
+   "PRIME": "PRIME23711-USD",
+   "HYPE": "HYPE32196-USD",
+   "IO": "IO29835-USD",
+   "ATH": "ATH30083-USD",
+   "GOAT": "GOAT33440-USD",
+   "COOKIE": "COOKIE31838-USD",
+   "ACT": "ACT33566-USD",
+   "VVV": "VVV35509-USD",
+   "ZRO": "ZRO26997-USD",
+   "POPCAT": "POPCAT28782-USD",
+   "USELESS": "USELESS36828-USD",
+   "BROCCOLI": "BROCCOLI35749-USD",
+   "LIT": "LIT39125-USD",
+   "MNT": "MNT27075-USD",
+   "GRT": "GRT6719-USD",
+   "S": "S32684-USD",
+   "XMR": "XMR-USD",
+   "ETHBTC": "ETH-BTC",
+   "SOLBTC": "SOL-BTC",
+   "SOLETH": "SOL-ETH",
+   "STACKS": "STX4847-USD"
+  },
+  "usgroups": [
+   {
+    "g": "US & world indices",
+    "cls": "Indices",
+    "tickers": [
+     "QQQ",
+     "RUS2000",
+     "NDX",
+     "DJI",
+     "SPX",
+     "ES1!",
+     "YM1!",
+     "NQ1!",
+     "NIKKEI",
+     "KOSPI"
+    ]
+   },
+   {
+    "g": "Magnificent 7",
+    "cls": "US stocks",
+    "tickers": [
+     "AMZN",
+     "AAPL",
+     "GOOGL",
+     "TSLA",
+     "MSFT",
+     "META",
+     "SPCX"
+    ]
+   },
+   {
+    "g": "Memory & storage",
+    "cls": "US stocks",
+    "tickers": [
+     "DRAM",
+     "WDC",
+     "STX",
+     "MU",
+     "SNDK",
+     "SAMSUNG",
+     "SKHYNIX"
+    ]
+   },
+   {
+    "g": "AI compute silicon",
+    "cls": "US stocks",
+    "tickers": [
+     "INTC",
+     "NVDA",
+     "CBRS",
+     "TSM",
+     "AVGO",
+     "AMD",
+     "ASML"
+    ]
+   },
+   {
+    "g": "Server OEMs & cooling",
+    "cls": "US stocks",
+    "tickers": [
+     "SMCI",
+     "HPE",
+     "MOD",
+     "VRT",
+     "ETN",
+     "DELL"
+    ]
+   },
+   {
+    "g": "Networking & connectivity",
+    "cls": "US stocks",
+    "tickers": [
+     "NOK",
+     "CSCO",
+     "ANET",
+     "CRDO",
+     "MRVL",
+     "CIEN"
+    ]
+   },
+   {
+    "g": "Neo-clouds & AI infrastructure",
+    "cls": "US stocks",
+    "tickers": [
+     "APLD",
+     "IREN",
+     "CRWV",
+     "NBIS"
+    ]
+   },
+   {
+    "g": "Optical & photonics",
+    "cls": "US stocks",
+    "tickers": [
+     "SIVE",
+     "AXTI",
+     "GLW",
+     "AAOI",
+     "LITE",
+     "EUV"
+    ]
+   },
+   {
+    "g": "Energy & power",
+    "cls": "US stocks",
+    "tickers": [
+     "EOSE",
+     "FCEL",
+     "FLNC",
+     "NEE",
+     "AAON",
+     "VST",
+     "CEG",
+     "TE",
+     "BE",
+     "GEV"
+    ]
+   },
+   {
+    "g": "Software",
+    "cls": "US stocks",
+    "tickers": [
+     "NOW",
+     "FTNT",
+     "ORCL",
+     "SNOW",
+     "ADBE",
+     "DDOG",
+     "CRWD"
+    ]
+   },
+   {
+    "g": "AI, defence & industrials",
+    "cls": "US stocks",
+    "tickers": [
+     "USAS",
+     "USAR",
+     "MP",
+     "RKLB",
+     "PLTR",
+     "RTX",
+     "EWY",
+     "HON",
+     "TSEM",
+     "GE",
+     "GOOG",
+     "LMT",
+     "CAT"
+    ]
+   },
+   {
+    "g": "Other US stocks & ETFs",
+    "cls": "US stocks",
+    "tickers": [
+     "LDI",
+     "AMC",
+     "INDO",
+     "ARBK",
+     "SNAP",
+     "SBET",
+     "WEN",
+     "RUM",
+     "DJT",
+     "OWL",
+     "LAR",
+     "PURR",
+     "NU",
+     "RKT",
+     "LYFT",
+     "F",
+     "RIVN",
+     "SOFI",
+     "GME",
+     "T",
+     "DKNG",
+     "HIMS",
+     "JD",
+     "DB",
+     "UPST",
+     "Z",
+     "HAL",
+     "PBF",
+     "NKE",
+     "PYPL",
+     "MRNA",
+     "VZ",
+     "BAC",
+     "UL",
+     "SLB",
+     "XLE",
+     "BKR",
+     "ACM",
+     "UBER",
+     "IR",
+     "OKLO",
+     "MDT",
+     "SQ",
+     "AMBA",
+     "KO",
+     "WFC",
+     "GM",
+     "NFLX",
+     "ABT",
+     "SCHW",
+     "SMTOY",
+     "NDAQ",
+     "HOOD",
+     "CL",
+     "HQY",
+     "IBKR",
+     "CVS",
+     "COPX",
+     "SBUX",
+     "CRCL",
+     "DIS",
+     "DG",
+     "UPS",
+     "ZM",
+     "WMT",
+     "BX",
+     "MRK",
+     "LULU",
+     "ROKU",
+     "APO",
+     "C",
+     "ABNB",
+     "MSTR",
+     "PG",
+     "PEP",
+     "ZS",
+     "SYNA",
+     "XLV",
+     "XOM",
+     "LSCC",
+     "NUGT",
+     "COIN",
+     "PSX",
+     "AMT",
+     "CVX",
+     "CRM",
+     "LOW",
+     "MS",
+     "ABBV",
+     "BA",
+     "JNJ",
+     "QCOM",
+     "VLO",
+     "CLH",
+     "MCD",
+     "JPM",
+     "AXP",
+     "HD",
+     "V",
+     "FDX",
+     "IBM",
+     "LRCX",
+     "MSI",
+     "ROK",
+     "MA",
+     "TMO",
+     "SPOT",
+     "SNPS",
+     "DE",
+     "SPY",
+     "COST",
+     "URI",
+     "BLK",
+     "LLY",
+     "GS",
+     "AZO",
+     "BRK.A"
+    ]
+   },
+   {
+    "g": "AI data-centre supply chain",
+    "cls": "US stocks",
+    "tickers": [
+     "BULL",
+     "UMC",
+     "CIFR",
+     "MRAM",
+     "LUNR",
+     "PL",
+     "SYM",
+     "AOSL",
+     "WOLF",
+     "PENG",
+     "GFS",
+     "IFX",
+     "MCHP",
+     "AEHR",
+     "ASTS",
+     "ON",
+     "SOI",
+     "8147.TW",
+     "DOCN",
+     "ERIE",
+     "TXN",
+     "NXPI",
+     "ISRG",
+     "ARM",
+     "CDNS",
+     "COHR",
+     "AXON",
+     "SITM",
+     "6830.TW",
+     "6315.T"
+    ]
+   },
+   {
+    "g": "Roundhill & thematic ETFs",
+    "cls": "US stocks",
+    "tickers": [
+     "ONDS",
+     "HUMN",
+     "MARS",
+     "MAGS",
+     "CHAT",
+     "SMTC",
+     "SMH",
+     "3363.TW",
+     "UWMC"
+    ]
+   }
+  ]
+ }
+}
