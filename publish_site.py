@@ -10,4 +10,6 @@ open("docs/index.html", "w").write(s)
 open("docs/.nojekyll", "w").write("")
 if os.path.exists("news.json"):
     import shutil; shutil.copy("news.json", "docs/news.json")
+if os.path.exists("earnings.json"):
+    import shutil; shutil.copy("earnings.json", "docs/earnings.json")
 print("docs/index.html", len(s), "bytes")

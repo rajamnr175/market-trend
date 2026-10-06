@@ -364,7 +364,44 @@ body{font-size:16.5px}
 @media (prefers-reduced-motion:reduce){.mk-btn,.aseg{transition:none}.mk-btn:hover,.aseg:hover{transform:none}}
 
 /* ---- news desk ---- */
-.mkts{grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:1100px!important}
+.mkts{grid-template-columns:repeat(4,minmax(0,1fr))!important;max-width:1240px!important}
+@media (max-width:900px){.mkts{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+/* ---- earnings calendar ---- */
+.etoday{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.ebox{background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.ebox h3{font-size:1rem;display:flex;align-items:center;gap:8px}
+.ebox h3 small{font:600 .72rem var(--f-data);color:var(--muted);margin-left:auto}
+.edays{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.eday{all:unset;cursor:pointer;flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:64px;padding:8px 10px;border-radius:10px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow)}
+.eday:hover{border-color:var(--glow)} .eday:focus-visible{outline:2px solid var(--accent)}
+.eday small{font:600 .66rem var(--f-data);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.eday b{font:700 1rem var(--f-data)} .eday span{font:600 .72rem var(--f-data);color:var(--accent)}
+.eday[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
+.eday.empty span{color:var(--muted)}
+.erow{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:center;padding:11px 16px;border-bottom:1px solid var(--soft)}
+.erow:last-child{border-bottom:0}
+.erow .tk{display:block} .erow .nm{max-width:none}
+.emeta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:4px}
+.ecell{font:500 .82rem var(--f-data);color:var(--ink)} .ecell small{display:block;font:500 .7rem var(--f-body);color:var(--muted)}
+.eflag{font:700 .64rem/1 var(--f-data);padding:3px 6px;border-radius:5px;background:var(--soft);color:var(--muted)}
+.eest{font:600 .64rem/1 var(--f-data);padding:3px 6px;border-radius:5px;background:var(--side-soft);color:var(--side)}
+.econf{font:600 .64rem/1 var(--f-data);padding:3px 6px;border-radius:5px;background:var(--up-soft);color:var(--up)}
+.ehead{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:12px;padding:8px 16px;font:600 .66rem/1.2 var(--f-data);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+@media (max-width:700px){.erow{grid-template-columns:1fr 1fr}.ehead{display:none}}
+.emini{display:flex;flex-direction:column;gap:6px;max-height:340px;overflow:auto}
+.emi{display:flex;justify-content:space-between;gap:10px;align-items:baseline;font-size:.86rem;border-top:1px solid var(--soft);padding-top:6px}
+.emi b{font-family:var(--f-data)} .emi span{color:var(--muted);font-size:.76rem;text-align:right}
+/* popup */
+.epop{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(10,20,17,.55);backdrop-filter:blur(3px)}
+.epop[hidden]{display:none!important}
+.epcard{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);width:min(560px,100%);max-height:86vh;display:flex;flex-direction:column;overflow:hidden}
+.ephd{padding:18px 20px 12px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center}
+.ephd .ai{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--accent);color:var(--panel);flex:none}
+.ephd .ai .ic{width:22px;height:22px;vertical-align:0}
+.ephd h2{font-size:1.15rem} .ephd p{margin:2px 0 0;color:var(--muted);font-size:.84rem}
+.epbody{padding:8px 20px 4px;overflow:auto;display:flex;flex-direction:column;gap:4px}
+.epsec{font:600 .68rem/1 var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 2px}
+.epft{padding:12px 20px 16px;display:flex;gap:10px;justify-content:flex-end;border-top:1px solid var(--line);flex-wrap:wrap}
 .nwrap{display:flex;flex-direction:column;gap:22px}
 .ncats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
 .ncat{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--c);box-shadow:var(--shadow);transition:transform .15s,box-shadow .2s}
@@ -397,6 +434,7 @@ body{font-size:16.5px}
   <button class="mk-btn" data-m="india" aria-pressed="true"><b>India</b><span>NSE / BSE stocks and sectors</span></button>
   <button class="mk-btn" data-m="global" aria-pressed="false"><b>Global</b><span>US stocks, crypto, bonds, commodities, FX</span></button>
   <button class="mk-btn" data-m="news" aria-pressed="false"><span class="mki"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13v14H6a2 2 0 01-2-2z"/><path d="M17 9h3v8a2 2 0 01-2 2"/><path d="M7 9h7M7 12.5h7M7 16h4"/></svg></span><b>News</b><span>Markets, rates, crypto, regulation</span></button>
+  <button class="mk-btn" data-m="earn" aria-pressed="false"><span class="mki"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3v3H8z"/></svg></span><b>Earnings</b><span>Report dates and results</span></button>
 </div>
 <section class="market" id="m-india">
 <header>
@@ -525,6 +563,31 @@ body{font-size:16.5px}
   <div><h3>Composite score (0–100)</h3><p>Trend (50 pts): price vs the 20/50/200D averages, 50D vs 200D, the slope of both averages, and higher highs and lows over the last 20 sessions against the prior 20. Momentum (50 pts): 3- and 6-month performance against Nifty, RSI(14), the MACD histogram's sign and direction, and ADX/DMI.</p></div>
   <div><h3>Data and limits</h3><p>Daily prices come from Yahoo Finance for NSE (BSE where not on NSE), covering about 2 years to 30 Sep 2026. Indices, commodities and ETFs from the watchlist appear only as backdrop. NSE (unlisted) and ESDS (listed Sep 2026, only 19 sessions) were not scored. Sector index history comes from NSE Indices (niftyindices.com). News notes come from published reports up to 30 Sep 2026 and cover the leading names only. This is a technical screen, not investment advice; it does not assess valuations.</p></div>
 </section>
+</div>
+</section>
+
+<section class="market" id="m-earn" hidden>
+<header>
+  <span class="eyebrow">Earnings · every stock on your India and Global lists · US and Indian companies</span>
+  <h1>Earnings Calendar</h1>
+  <p class="sub">When each company on your watchlists reports its quarterly results, with analysts' EPS and revenue estimates, the last quarter's surprise and the dashboard's current call. US report times are shown in IST: "before open" reports land around 6–7 PM IST, "after close" reports around 1:30–2:30 AM IST. Indian companies announce results after their board meeting; the exact time is rarely published in advance.</p>
+  <div class="scanbar" id="scanER" role="note"></div>
+</header>
+<div class="nwrap">
+  <section><div class="etoday" id="etoday"></div></section>
+  <section><div class="sechead"><h2>Next two weeks</h2><p>Tap a day to see only that day's reports.</p></div><div class="edays" id="edays"></div></section>
+  <section>
+    <div class="sechead"><h2>Upcoming reports</h2><p>"Confirmed" dates are announced by the company; "Estimated" dates are projections and can move.</p></div>
+    <div class="controls">
+      <div class="seg" id="ereg" role="group" aria-label="Market"></div>
+      <input id="eq" type="search" placeholder="Search company or ticker" aria-label="Search earnings">
+      <select id="edec" aria-label="Current call"></select>
+      <span class="count" id="ecount"></span>
+    </div>
+    <div class="nlist" id="elist"></div>
+  </section>
+  <section id="erecSec"><div class="sechead"><h2>Recent results</h2><p>Reported in the last two weeks: actual EPS against the analysts' estimate.</p></div><div class="nlist" id="erec"></div></section>
+  <p class="nsrcs">Source: Yahoo Finance earnings data (dates, consensus estimates, reported EPS), refreshed with each scan. Dates and estimates can change; check the company's announcement before trading. Not investment advice.</p>
 </div>
 </section>
 
@@ -1279,7 +1342,7 @@ GTABS.forEach(t=>t.onclick=()=>showGTab(t.id));
 try{const s=localStorage.getItem("gtab"); if(s&&document.getElementById(s)) showGTab(s);}catch(e){}
 // ---- market switch
 const MKT=[...document.querySelectorAll(".mk-btn")];
-function showMarket(m){ MKT.forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m)); document.getElementById("m-india").hidden=m!=="india"; document.getElementById("m-global").hidden=m!=="global"; document.getElementById("m-news").hidden=m!=="news"; if(m==="news") newsOpen();
+function showMarket(m){ MKT.forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m)); document.getElementById("m-india").hidden=m!=="india"; document.getElementById("m-global").hidden=m!=="global"; document.getElementById("m-news").hidden=m!=="news"; if(m==="news") newsOpen(); document.getElementById("m-earn").hidden=m!=="earn"; if(m==="earn") earnOpen();
   try{localStorage.setItem("market",m)}catch(e){} if(m==="global"){ if(!document.getElementById("gp-perf").hidden) drawGBars(); gStart(); } else { if(!document.getElementById("p-sectors").hidden){drawBars();drawLines();} }
   window.scrollTo({top:0}); }
 MKT.forEach(b=>b.onclick=()=>showMarket(b.dataset.m));
@@ -1550,6 +1613,73 @@ function initVisuals(){ mountVisuals(); installVisualOverrides(); drawCards(); d
 initVisuals();
 
 
+// ---- earnings calendar
+let EARN = __EARN__, eLoaded=false;
+async function earnOpen(){ if(!eLoaded){ eLoaded=true; try{ const r=await fetch("earnings.json?t="+Date.now(),{cache:"no-store"}); if(r.ok){ const j=await r.json(); if(j&&j.upcoming&&(!EARN.iso||Date.parse(j.iso)>=Date.parse(EARN.iso))) EARN=j; } }catch(e){} } drawEarn(); }
+let eday=null, ereg="all";
+const ECALL=(()=>{ const m={}; try{ for(const s of D.stocks) m["IN:"+s.t]=s.dec; for(const s of GD.items) m["US:"+s.t]=s.dec; }catch(e){} return m; })();
+const ecall=e=>ECALL[(e.region==="IN"?"IN:":"US:")+e.t]||null;
+const istDate=(d=new Date())=>d.toLocaleDateString("en-CA",{timeZone:"Asia/Kolkata"});
+const eDayLabel=ds=>new Date(ds+"T12:00:00Z").toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short",timeZone:"UTC"});
+const eIST=ts=>new Date(ts*1000).toLocaleString("en-IN",{timeZone:"Asia/Kolkata",hour:"numeric",minute:"2-digit",hour12:true,day:"numeric",month:"short"});
+function eWhen(e){ if(e.region==="IN") return ["Board meeting","time not announced"];
+  if(e.when==="BMO") return ["Before US open","~"+eIST(e.ts)+" IST"]; if(e.when==="AMC") return ["After US close","~"+eIST(e.ts)+" IST"]; return ["During/near US hours","~"+eIST(e.ts)+" IST"]; }
+function eNum(x,cur){ if(x==null) return "–"; if(x<0) return "-"+eNum(-x,cur); const a=Math.abs(x), sym=cur==="INR"?"₹":cur==="USD"?"$":"";
+  if(a>=1e12) return sym+(x/1e12).toFixed(2)+" T"; if(a>=1e9) return sym+(x/1e9).toFixed(2)+" B"; if(a>=1e7&&cur==="INR") return sym+(x/1e7).toFixed(0)+" Cr"; if(a>=1e6) return sym+(x/1e6).toFixed(1)+" M"; return sym+x.toFixed(2); }
+function eRegion(e){ return e.region==="IN"?"India":e.region==="US"?"US":"Intl"; }
+function eCallPill(e){ const c=ecall(e); if(!c||!DEC[c]) return ""; return `<span class="pill" style="--c:var(${DEC[c].c});--cs:var(${DEC[c].c}-soft)">${esc(c)}</span>`; }
+function eRow(e){ const [w1,w2]=eWhen(e), p=e.prev||{};
+  const surp=p.surp!=null?`<small>Last qtr: <span class="${p.surp>=0?"pos":"neg"}">${p.surp>0?"+":""}${p.surp}%</span> vs est.</small>`:"<small>Last qtr: –</small>";
+  return `<div class="erow"><div><span class="tk">${esc(e.t)}</span><span class="nm">${esc(e.name)}</span><div class="emeta"><span class="eflag">${eRegion(e)}</span>${e.est?'<span class="eest">Estimated date</span>':'<span class="econf">Confirmed</span>'}${eCallPill(e)}</div></div>
+    <div class="ecell">${esc(w1)}<small>${esc(w2)}</small></div>
+    <div class="ecell">${e.epsEst!=null?eNum(e.epsEst,e.cur):"–"}<small>${e.epsLo!=null?"range "+eNum(e.epsLo,e.cur)+" – "+eNum(e.epsHi,e.cur):"EPS estimate"}</small></div>
+    <div class="ecell">${e.revEst!=null?eNum(e.revEst,e.cur):"–"}<small>Revenue estimate</small>${surp}</div></div>`; }
+function eFilter(){ const q=(document.getElementById("eq").value||"").trim().toLowerCase(), dc=document.getElementById("edec").value||"all";
+  return (EARN.upcoming||[]).filter(e=>(ereg==="all"||(ereg==="IN"?e.region==="IN":ereg==="US"?e.region==="US":e.region==="INTL"))&&(!eday||e.d===eday)&&(dc==="all"||ecall(e)===dc)&&(!q||e.t.toLowerCase().includes(q)||e.name.toLowerCase().includes(q))); }
+function drawEarn(){
+  const U=EARN.upcoming||[], today=istDate(), tmr=istDate(new Date(Date.now()+864e5));
+  { const el=document.getElementById("scanER"); const h=EARN.iso?(Date.now()-Date.parse(EARN.iso))/36e5:99;
+    el.innerHTML=`<svg class="scal" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><span class="sl">Calendar updated</span><br><span class="sd">${esc(EARN.asof||"–")}</span></span><span class="age ${h<12?"fresh":""}">${h<1?"Within the hour":h<24?Math.round(h)+" h ago":Math.floor(h/24)+" days ago"}</span><span class="sn">${U.length} reports in the next 45 days across ${EARN.checked||0} stocks checked. Refreshed with every scan.</span>`; }
+  const mini=(L,empty)=>L.length?`<div class="emini">${L.map(e=>{const [w1,w2]=eWhen(e);return `<div class="emi"><div><b>${esc(e.t)}</b> <span style="font-size:.8rem;color:var(--muted)">${esc(e.name)}</span></div><span>${eRegion(e)} · ${esc(w1)}<br>${e.epsEst!=null?"EPS est "+eNum(e.epsEst,e.cur):""}</span></div>`}).join("")}</div>`:`<p class="note">${empty}</p>`;
+  const T=U.filter(e=>e.d===today), M=U.filter(e=>e.d===tmr);
+  document.getElementById("etoday").innerHTML=`<div class="ebox"><h3>Today · ${eDayLabel(today)}<small>${T.length} report${T.length===1?"":"s"}</small></h3>${mini(T,"No companies on your lists report today.")}</div>
+    <div class="ebox"><h3>Tomorrow · ${eDayLabel(tmr)}<small>${M.length} report${M.length===1?"":"s"}</small></h3>${mini(M,"No companies on your lists report tomorrow.")}</div>`;
+  const days=[]; for(let i=0;i<15;i++){ const ds=istDate(new Date(Date.now()+i*864e5)); const wd=new Date(ds+"T12:00:00Z").getUTCDay(); if(wd===0||wd===6) continue; days.push(ds); }
+  document.getElementById("edays").innerHTML=`<button class="eday" data-d="" aria-pressed="${!eday}"><small>All</small><b>${U.length}</b><span>45 days</span></button>`+days.map(ds=>{const n=U.filter(e=>e.d===ds).length; const lab=eDayLabel(ds).split(" ");
+    return `<button class="eday ${n?"":"empty"}" data-d="${ds}" aria-pressed="${eday===ds}"><small>${esc(lab[0].replace(",",""))}</small><b>${esc(lab[1]||"")} ${esc(lab[2]||"")}</b><span>${n} report${n===1?"":"s"}</span></button>`}).join("");
+  document.querySelectorAll("#edays .eday").forEach(b=>b.onclick=()=>{eday=b.dataset.d||null;drawEarn();});
+  document.getElementById("ereg").innerHTML=[["all","All"],["US","US"],["IN","India"],["INTL","Other"]].map(([k,l])=>`<button data-k="${k}" aria-pressed="${ereg===k}">${l}</button>`).join("");
+  document.querySelectorAll("#ereg button").forEach(b=>b.onclick=()=>{ereg=b.dataset.k;drawEarn();});
+  const sel=document.getElementById("edec"), cv=sel.value||"all";
+  sel.innerHTML=`<option value="all">Any current call</option>`+["Buy candidate","Wait for pullback","Watch: pullback","No edge yet","Avoid for now"].map(c=>`<option ${c===cv?"selected":""}>${c}</option>`).join("");
+  const L=eFilter(); document.getElementById("ecount").textContent=`${L.length} of ${U.length}`;
+  let html=`<div class="ehead"><span>Company</span><span>Time</span><span>EPS estimate</span><span>Revenue estimate</span></div>`, d0=null;
+  for(const e of L){ if(e.d!==d0){ d0=e.d; html+=`<div class="nday">${esc(eDayLabel(e.d))}${e.d===today?" · Today":e.d===tmr?" · Tomorrow":""}</div>`; } html+=eRow(e); }
+  document.getElementById("elist").innerHTML=L.length?html:`<div class="nempty">No reports match these filters.</div>`;
+  const R=(EARN.recent||[]).filter(r=>r.epsAct!=null);
+  document.getElementById("erecSec").hidden=!R.length;
+  document.getElementById("erec").innerHTML=`<div class="ehead"><span>Company</span><span>Reported</span><span>EPS actual vs est.</span><span>Surprise</span></div>`+R.map(r=>`<div class="erow"><div><span class="tk">${esc(r.t)}</span><span class="nm">${esc(r.name)}</span><div class="emeta"><span class="eflag">${eRegion(r)}</span>${eCallPill(r)}</div></div><div class="ecell">${esc(eDayLabel(r.d))}<small>quarter to ${esc(r.qtr||"–")}</small></div><div class="ecell">${eNum(r.epsAct,r.cur)}<small>est. ${eNum(r.epsEst2,r.cur)}</small></div><div class="ecell"><b class="${(r.surp||0)>=0?"pos":"neg"}">${r.surp!=null?(r.surp>0?"+":"")+r.surp+"%":"–"}</b><small>${(r.surp||0)>=0?"beat":"miss"}</small></div></div>`).join("");
+}
+["eq","edec"].forEach(id=>document.getElementById(id).addEventListener(id==="eq"?"input":"change",drawEarn));
+function earnPopup(){
+  const today=istDate(); const T=(EARN.upcoming||[]).filter(e=>e.d===today);
+  let seen=null; try{ seen=localStorage.getItem("earnPopup"); }catch(e){}
+  if(!T.length||seen===today) return;
+  const order={BMO:0,DMH:1,AMC:2,"":3};
+  const grp=[["India",T.filter(e=>e.region==="IN")],["United States",T.filter(e=>e.region==="US").sort((a,b)=>(order[a.when]-order[b.when])||((b.mcap||0)-(a.mcap||0)))],["Other markets",T.filter(e=>e.region==="INTL")]].filter(g=>g[1].length);
+  const wrap=document.createElement("div"); wrap.className="epop"; wrap.setAttribute("role","dialog"); wrap.setAttribute("aria-modal","true"); wrap.setAttribute("aria-label","Earnings today");
+  wrap.innerHTML=`<div class="epcard"><div class="ephd"><span class="ai">${document.querySelector('[data-m=earn] .mki')?.innerHTML||""}</span><div><h2>Earnings today · ${esc(eDayLabel(today))}</h2><p>${T.length} compan${T.length===1?"y":"ies"} on your watchlists report${T.length===1?"s":""} results today.</p></div></div>
+    <div class="epbody">${grp.map(([g,L])=>`<div class="epsec">${g}</div>`+L.map(e=>{const [w1,w2]=eWhen(e);return `<div class="emi"><div><b>${esc(e.t)}</b> <span style="font-size:.8rem;color:var(--muted)">${esc(e.name)}</span> ${eCallPill(e)}</div><span>${esc(w1)}${e.region!=="IN"?"<br>"+esc(w2):""}${e.epsEst!=null?"<br>EPS est "+eNum(e.epsEst,e.cur):""}</span></div>`}).join("")).join("")}</div>
+    <div class="epft"><button class="btn ghost" id="epClose">Close</button><button class="btn" id="epOpen">Open Earnings Calendar</button></div></div>`;
+  document.body.appendChild(wrap);
+  const close=()=>{ wrap.remove(); try{ localStorage.setItem("earnPopup",today); }catch(e){} };
+  wrap.querySelector("#epClose").onclick=close;
+  wrap.querySelector("#epOpen").onclick=()=>{ close(); eday=today; showMarket("earn"); };
+  wrap.addEventListener("click",ev=>{ if(ev.target===wrap) close(); });
+  document.addEventListener("keydown",function k(ev){ if(ev.key==="Escape"){ close(); document.removeEventListener("keydown",k);} });
+  setTimeout(()=>wrap.querySelector("#epOpen").focus(),50);
+}
+
 // ---- news desk
 const NEWS0 = __NEWS__;
 let NW=NEWS0, ncat="all", nLoaded=false;
@@ -1600,5 +1730,6 @@ function scanAge(iso){ const h=(Date.now()-Date.parse(iso))/36e5; if(h<1) return
 function drawScan(id,sc){ const el=document.getElementById(id); if(!el||!sc) return; const [c,t]=scanAge(sc.iso);
   el.innerHTML=`<svg class="scal" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3v3H8z"/></svg><div><div class="sl">Data scanned</div><div class="sd">${esc(sc.label)}</div></div><span class="age ${c}">${t}</span><span class="sn">${esc(sc.note)} Verdicts, scores, rankings and news notes come from this scan. Live prices, when connected, update on top of it.</span>`; }
 drawScan("scanIN",D.scan); drawScan("scanGL",GD.scan); setInterval(()=>{drawScan("scanIN",D.scan);drawScan("scanGL",GD.scan);},60000);
-try{ const mm=localStorage.getItem('market'); if(mm==='global'||mm==='news') showMarket(mm); }catch(e){}
+try{ const mm=localStorage.getItem('market'); if(mm==='global'||mm==='news'||mm==='earn') showMarket(mm); }catch(e){}
+earnPopup();
 </script>
