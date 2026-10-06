@@ -114,7 +114,13 @@ def fetch(feed):
             req = urllib.request.Request(url, headers=UA)
             with urllib.request.urlopen(req, timeout=20) as r:
                 data = r.read()
-            root = ET.fromstring(data)
+            try:
+                root = ET.fromstring(data)
+            except ET.ParseError:      # repair common feed errors (stray "&", control characters)
+                txt = data.decode("utf-8", "replace")
+                txt = re.sub(r"&(?!#?\w+;)", "&amp;", txt)
+                txt = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", "", txt)
+                root = ET.fromstring(txt.encode("utf-8"))
             break
         except Exception as e:
             err = str(e)[:80]; time.sleep(2)
