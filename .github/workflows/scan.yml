@@ -45,6 +45,9 @@ jobs:
           echo "mode=$M" >> "$GITHUB_OUTPUT"
           echo "Mode: $M"
 
+      - name: Collect market news
+        run: python3 news.py || echo "News collection failed; keeping previous headlines"
+
       - name: Run scan (retries once after 3 minutes if it fails)
         run: |
           ARGS=""; [ "${{ steps.mode.outputs.mode }}" = "global" ] && ARGS="--global"
@@ -61,6 +64,7 @@ jobs:
         run: |
           git config user.name  "market-trend-bot"
           git config user.email "market-trend-bot@users.noreply.github.com"
-          git add docs raw.txt lt.txt idx.txt graw.txt cs.json scan_india.json scan_global.json decisions.json
+          git add docs raw.txt lt.txt idx.txt graw.txt cs.json scan_india.json scan_global.json decisions.json news.json
           git diff --cached --quiet && echo "No changes" || git commit -m "Rescan $(TZ=Asia/Kolkata date '+%d %b %Y %H:%M IST')"
+          git pull --rebase
           git push

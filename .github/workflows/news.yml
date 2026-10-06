@@ -1,0 +1,38 @@
+name: Market news refresh
+
+on:
+  schedule:
+    - cron: "20 * * * *"      # every hour at :20 (UTC), every day — keeps the News section fresh
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-trend
+  cancel-in-progress: false
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Collect market news
+        run: |
+          python3 news.py
+          mkdir -p docs && cp news.json docs/news.json
+
+      - name: Save headlines
+        run: |
+          git config user.name  "market-trend-bot"
+          git config user.email "market-trend-bot@users.noreply.github.com"
+          git add news.json docs/news.json
+          git diff --cached --quiet && echo "No changes" || git commit -m "News $(TZ=Asia/Kolkata date '+%d %b %Y %H:%M IST')"
+          git pull --rebase
+          git push
