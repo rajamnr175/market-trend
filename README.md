@@ -17,6 +17,14 @@ GitHub Pages hosts the dashboard.
 GitHub can start scheduled runs 5–30 minutes late at busy times. To run it right now:
 **Actions → Market Trend rescan → Run workflow** (choose `full` or `global`).
 
+## News section
+`news.py` collects market-only headlines (last 48 h) from public RSS feeds: Bloomberg, Reuters, CNN Business, CNBC
+(these four partly via Google News), WSJ, MarketWatch, FT, Yahoo Finance, Investing.com, Economic Times, Moneycontrol,
+Mint, Business Standard, BusinessLine, NDTV Profit, CoinDesk, Cointelegraph, The Block, Decrypt, Federal Reserve, RBI,
+US SEC, SEBI and ECB. Headlines are tagged (US, India, crypto, rates, bonds, regulation, world, commodities) and the
+biggest stories are flagged "Top story". `.github/workflows/news.yml` refreshes `docs/news.json` every hour; the page
+loads it automatically. Headlines and links only — no article text is copied.
+
 ## Files
 - `scan.py` downloads prices and runs everything; `metrics.py` computes the indicators;
   `analyze.py`, `build2.py`, `gbuild.py` assign verdicts, decisions and sector/group rankings.

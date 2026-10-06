@@ -362,12 +362,41 @@ body{font-size:16.5px}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--glow:#5eead4}}
 :root[data-theme="dark"]{--glow:#5eead4}
 @media (prefers-reduced-motion:reduce){.mk-btn,.aseg{transition:none}.mk-btn:hover,.aseg:hover{transform:none}}
+
+/* ---- news desk ---- */
+.mkts{grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:1100px!important}
+.nwrap{display:flex;flex-direction:column;gap:22px}
+.ncats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.ncat{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--c);box-shadow:var(--shadow);transition:transform .15s,box-shadow .2s}
+.ncat:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--glow),0 0 14px 2px color-mix(in srgb,var(--glow) 55%,transparent)}
+.ncat:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ncat b{font:700 1.5rem/1 var(--f-data);color:var(--c)} .ncat span{font-weight:700;font-size:.9rem} .ncat small{font-size:.74rem;color:var(--muted)}
+.ncat[aria-pressed="true"]{background:var(--cs)}
+.ntop{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.ntc{position:relative;display:flex;flex-direction:column;gap:8px;padding:14px 16px;border-radius:12px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);min-width:0}
+.ntc::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;border-radius:12px 12px 0 0;background:var(--c)}
+.ntc a,.nrow a{color:var(--ink);text-decoration:none;font-weight:700;line-height:1.35}
+.ntc a:hover,.nrow a:hover{color:var(--accent);text-decoration:underline}
+.nmeta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.76rem;color:var(--muted)}
+.nsrc{font:600 .72rem var(--f-data);color:var(--ink);background:var(--soft);padding:2px 7px;border-radius:6px}
+.ntag{font:600 .66rem/1 var(--f-data);letter-spacing:.04em;text-transform:uppercase;padding:4px 7px;border-radius:999px;background:var(--cs);color:var(--c)}
+.nhot{font:700 .66rem/1 var(--f-data);text-transform:uppercase;letter-spacing:.05em;padding:4px 7px;border-radius:999px;background:var(--bad-soft);color:var(--bad)}
+.nlist{background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.nday{font:600 .7rem/1 var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:12px 16px;background:var(--soft);border-bottom:1px solid var(--line)}
+.nrow{display:grid;grid-template-columns:74px 1fr;gap:12px;padding:12px 16px;border-bottom:1px solid var(--soft)}
+.nrow:last-child{border-bottom:0}
+.ntime{font:600 .8rem var(--f-data);color:var(--ink)} .ntime small{display:block;font-weight:500;font-size:.7rem;color:var(--muted)}
+.nbody{display:flex;flex-direction:column;gap:6px;min-width:0}
+.nempty{padding:28px;text-align:center;color:var(--muted)}
+.nsrcs{font-size:.76rem;color:var(--muted);line-height:1.6}
+@media (max-width:520px){.nrow{grid-template-columns:1fr}.ntime small{display:inline;margin-left:6px}.mkts{gap:6px!important}.mk-btn{display:flex!important;justify-content:center;padding:12px 6px!important}.mk-btn .mki{display:none!important}.mk-btn b{font-size:1rem!important}}
 </style>
 
 <div class="wrap">
 <div class="mkts" role="group" aria-label="Market">
   <button class="mk-btn" data-m="india" aria-pressed="true"><b>India</b><span>NSE / BSE stocks and sectors</span></button>
   <button class="mk-btn" data-m="global" aria-pressed="false"><b>Global</b><span>US stocks, crypto, bonds, commodities, FX</span></button>
+  <button class="mk-btn" data-m="news" aria-pressed="false"><span class="mki"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13v14H6a2 2 0 01-2-2z"/><path d="M17 9h3v8a2 2 0 01-2 2"/><path d="M7 9h7M7 12.5h7M7 16h4"/></svg></span><b>News</b><span>Markets, rates, crypto, regulation</span></button>
 </div>
 <section class="market" id="m-india">
 <header>
@@ -496,6 +525,30 @@ body{font-size:16.5px}
   <div><h3>Composite score (0–100)</h3><p>Trend (50 pts): price vs the 20/50/200D averages, 50D vs 200D, the slope of both averages, and higher highs and lows over the last 20 sessions against the prior 20. Momentum (50 pts): 3- and 6-month performance against Nifty, RSI(14), the MACD histogram's sign and direction, and ADX/DMI.</p></div>
   <div><h3>Data and limits</h3><p>Daily prices come from Yahoo Finance for NSE (BSE where not on NSE), covering about 2 years to 30 Sep 2026. Indices, commodities and ETFs from the watchlist appear only as backdrop. NSE (unlisted) and ESDS (listed Sep 2026, only 19 sessions) were not scored. Sector index history comes from NSE Indices (niftyindices.com). News notes come from published reports up to 30 Sep 2026 and cover the leading names only. This is a technical screen, not investment advice; it does not assess valuations.</p></div>
 </section>
+</div>
+</section>
+
+<section class="market" id="m-news" hidden>
+<header>
+  <span class="eyebrow">Market headlines · Bloomberg, Reuters, CNN, CNBC, WSJ, FT, Economic Times, Mint, CoinDesk, Fed, RBI, SEC, SEBI and more</span>
+  <h1>Market News Desk</h1>
+  <p class="sub">Market-moving headlines from the last 48 hours: US and Indian stocks, crypto, interest rates and central banks, Treasury and Indian bond yields, regulation, commodities and other world markets. Headlines link to the original article. "Top story" flags rate decisions, sharp moves and big regulatory news.</p>
+  <div class="scanbar" id="scanNW" role="note"></div>
+</header>
+<div class="nwrap">
+  <section><div class="sechead"><h2>By topic</h2><p>Tap a topic to filter. Counts cover the last 48 hours.</p></div><div class="ncats" id="ncats"></div></section>
+  <section id="ntopSec"><div class="sechead"><h2>Top stories</h2><p>Rate decisions, big market moves, regulatory actions and stories covered by several outlets.</p></div><div class="ntop" id="ntop"></div></section>
+  <section>
+    <div class="sechead"><h2>All headlines</h2><p>Newest first, times in IST.</p></div>
+    <div class="controls">
+      <input id="nq" type="search" placeholder="Search headlines (e.g. Fed, Nifty, bitcoin, yields)" aria-label="Search headlines">
+      <select id="nsrc" aria-label="Source"></select>
+      <label><input type="checkbox" id="nhotOnly"> Top stories only</label>
+      <span class="count" id="ncount"></span>
+    </div>
+    <div class="nlist" id="nlist"></div>
+  </section>
+  <p class="nsrcs" id="nsrcs"></p>
 </div>
 </section>
 
@@ -1226,7 +1279,7 @@ GTABS.forEach(t=>t.onclick=()=>showGTab(t.id));
 try{const s=localStorage.getItem("gtab"); if(s&&document.getElementById(s)) showGTab(s);}catch(e){}
 // ---- market switch
 const MKT=[...document.querySelectorAll(".mk-btn")];
-function showMarket(m){ MKT.forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m)); document.getElementById("m-india").hidden=m!=="india"; document.getElementById("m-global").hidden=m!=="global";
+function showMarket(m){ MKT.forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m)); document.getElementById("m-india").hidden=m!=="india"; document.getElementById("m-global").hidden=m!=="global"; document.getElementById("m-news").hidden=m!=="news"; if(m==="news") newsOpen();
   try{localStorage.setItem("market",m)}catch(e){} if(m==="global"){ if(!document.getElementById("gp-perf").hidden) drawGBars(); gStart(); } else { if(!document.getElementById("p-sectors").hidden){drawBars();drawLines();} }
   window.scrollTo({top:0}); }
 MKT.forEach(b=>b.onclick=()=>showMarket(b.dataset.m));
@@ -1497,10 +1550,55 @@ function initVisuals(){ mountVisuals(); installVisualOverrides(); drawCards(); d
 initVisuals();
 
 
+// ---- news desk
+const NEWS0 = __NEWS__;
+let NW=NEWS0, ncat="all", nLoaded=false;
+const NCATS=[["all","All headlines","--accent"],["top","Top stories","--bad"],["us","US markets","--mom"],["india","India markets","--up"],["crypto","Crypto","--down"],["rates","Rates & central banks","--accent"],["bonds","Bonds & yields","--side"],["reg","Regulation","--bad"],["world","World markets","--na"],["cmdty","Commodities","--side"]];
+const NLAB=Object.fromEntries(NCATS.map(([k,l,c])=>[k,[l,c]]));
+const isTop=n=>n.imp>=3;
+const nIn=(n)=>ncat==="all"||(ncat==="top"?isTop(n):n.cats.includes(ncat));
+function fmtIST(ts){ return new Date(ts*1000).toLocaleTimeString("en-IN",{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit",hour12:false}); }
+function ago(ts){ const m=Math.max(0,Math.round((Date.now()/1000-ts)/60)); return m<60?m+" min ago":Math.round(m/60)+" h ago"; }
+function dayKey(ts){ return new Date(ts*1000).toLocaleDateString("en-IN",{timeZone:"Asia/Kolkata",weekday:"long",day:"numeric",month:"short"}); }
+function ntags(n){ return n.cats.filter(c=>NLAB[c]).map(c=>`<span class="ntag" style="--c:var(${NLAB[c][1]});--cs:var(${NLAB[c][1]}-soft,var(--soft))">${esc(NLAB[c][0])}</span>`).join(""); }
+function nsrcLine(n){ return `<span class="nsrc">${esc(n.src)}</span>${n.also&&n.also.length?`<span>also ${esc(n.also.slice(0,3).join(", "))}</span>`:""}`; }
+const nlink=n=>/^https?:/.test(n.u)?n.u:"#";
+function drawNews(){
+  const items=NW.items||[];
+  { const el=document.getElementById("scanNW"); const h=NW.iso?(Date.now()-Date.parse(NW.iso))/36e5:99; const age=h<1?"Updated within the hour":h<24?Math.round(h)+" h ago":Math.floor(h/24)+" days ago";
+    el.innerHTML=`<svg class="scal" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><span class="sl">Headlines collected</span><br><span class="sd">${esc(NW.asof||"–")}</span></span><span class="age ${h<3?"fresh":""}">${age}</span><span class="sn">${items.length} market headlines from ${(NW.sources||[]).filter(s=>s.ok).length} sources, refreshed every hour. Headlines and links only; open a headline to read the full story at the publisher.</span>`; }
+  document.getElementById("ncats").innerHTML=NCATS.map(([k,l,c])=>{const n=k==="all"?items.length:items.filter(x=>k==="top"?isTop(x):x.cats.includes(k)).length;
+    return `<button class="ncat" data-k="${k}" aria-pressed="${ncat===k}" style="--c:var(${c});--cs:var(${c}-soft,var(--soft))"><b>${n}</b><span>${esc(l)}</span><small>${k==="top"?"market-moving":"last 48 h"}</small></button>`}).join("");
+  document.querySelectorAll("#ncats .ncat").forEach(b=>b.onclick=()=>{ncat=b.dataset.k;drawNews();});
+  const top=items.filter(n=>isTop(n)&&nIn(n)).sort((a,b)=>(b.imp-a.imp)||(b.ts-a.ts)).slice(0,9);
+  document.getElementById("ntopSec").hidden=!top.length;
+  document.getElementById("ntop").innerHTML=top.map(n=>{const c=NLAB[n.cats[0]]?.[1]||"--accent";
+    return `<article class="ntc" style="--c:var(${c})"><a href="${esc(nlink(n))}" target="_blank" rel="noopener noreferrer">${esc(n.t)}</a><div class="nmeta">${nsrcLine(n)}<span>${fmtIST(n.ts)} IST · ${ago(n.ts)}</span></div><div class="nmeta">${ntags(n)}</div></article>`}).join("");
+  const sel=document.getElementById("nsrc"), cur=sel.value||"all";
+  const srcs=[...new Set(items.map(n=>n.src))].sort();
+  sel.innerHTML=`<option value="all">All sources</option>`+srcs.map(s=>`<option ${s===cur?"selected":""}>${esc(s)}</option>`).join("");
+  const q=document.getElementById("nq").value.trim().toLowerCase(), hot=document.getElementById("nhotOnly").checked, sv=sel.value;
+  const L=items.filter(n=>nIn(n)&&(!hot||isTop(n))&&(sv==="all"||n.src===sv||(n.also||[]).includes(sv))&&(!q||n.t.toLowerCase().includes(q)||n.src.toLowerCase().includes(q))).sort((a,b)=>b.ts-a.ts);
+  document.getElementById("ncount").textContent=`${L.length} of ${items.length}`;
+  let html="", day=null;
+  for(const n of L.slice(0,250)){ const d=dayKey(n.ts); if(d!==day){ day=d; html+=`<div class="nday">${esc(d)}</div>`; }
+    html+=`<div class="nrow"><div class="ntime">${fmtIST(n.ts)}<small>${ago(n.ts)}</small></div><div class="nbody"><a href="${esc(nlink(n))}" target="_blank" rel="noopener noreferrer">${esc(n.t)}</a><div class="nmeta">${nsrcLine(n)}${isTop(n)?'<span class="nhot">Top story</span>':""}${ntags(n)}</div></div></div>`; }
+  document.getElementById("nlist").innerHTML=html||`<div class="nempty">No headlines match these filters.</div>`;
+  const S=NW.sources||[]; document.getElementById("nsrcs").innerHTML=S.length?`Sources: ${S.map(s=>esc(s.name)+(s.ok?"":" (unavailable this time)")).join(" · ")}. Bloomberg, Reuters, CNN and CNBC headlines partly arrive via Google News. Headlines link to the publisher; some articles may need a subscription. Market news only, not investment advice.`:"";
+}
+async function newsOpen(){
+  if(!nLoaded){ nLoaded=true;
+    try{ const r=await fetch("news.json?t="+Date.now(),{cache:"no-store"}); if(r.ok){ const j=await r.json(); if(j&&j.items&&(!NW.iso||Date.parse(j.iso)>=Date.parse(NW.iso))) NW=j; } }catch(e){}
+    setInterval(async()=>{ if(document.getElementById("m-news").hidden) return; try{ const r=await fetch("news.json?t="+Date.now(),{cache:"no-store"}); if(r.ok){ const j=await r.json(); if(j&&j.items){ NW=j; drawNews(); } } }catch(e){} },10*60*1000);
+  }
+  drawNews();
+}
+["nq","nsrc","nhotOnly"].forEach(id=>document.getElementById(id).addEventListener(id==="nq"?"input":"change",drawNews));
+
 // ---- scan date badges
 function scanAge(iso){ const h=(Date.now()-Date.parse(iso))/36e5; if(h<1) return ["fresh","Scanned within the hour"]; if(h<24) return [h<6?"fresh":"",Math.round(h)+" h old"]; const dd=Math.floor(h/24); return ["",dd+(dd===1?" day":" days")+" old"]; }
 function drawScan(id,sc){ const el=document.getElementById(id); if(!el||!sc) return; const [c,t]=scanAge(sc.iso);
   el.innerHTML=`<svg class="scal" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3v3H8z"/></svg><div><div class="sl">Data scanned</div><div class="sd">${esc(sc.label)}</div></div><span class="age ${c}">${t}</span><span class="sn">${esc(sc.note)} Verdicts, scores, rankings and news notes come from this scan. Live prices, when connected, update on top of it.</span>`; }
 drawScan("scanIN",D.scan); drawScan("scanGL",GD.scan); setInterval(()=>{drawScan("scanIN",D.scan);drawScan("scanGL",GD.scan);},60000);
-try{ if(localStorage.getItem('market')==='global') showMarket('global'); }catch(e){}
+try{ const mm=localStorage.getItem('market'); if(mm==='global'||mm==='news') showMarket(mm); }catch(e){}
 </script>

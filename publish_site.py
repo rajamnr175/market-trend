@@ -8,4 +8,6 @@ if not s.lstrip().lower().startswith("<!doctype"):
 os.makedirs("docs", exist_ok=True)
 open("docs/index.html", "w").write(s)
 open("docs/.nojekyll", "w").write("")
+if os.path.exists("news.json"):
+    import shutil; shutil.copy("news.json", "docs/news.json")
 print("docs/index.html", len(s), "bytes")

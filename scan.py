@@ -299,7 +299,7 @@ def render():
     os.makedirs("out", exist_ok=True)
     D = open("data2.json").read(); G = open("gdata.json").read()
     for tpl, out in (("template_visual.html", "out/scan_visual.html"), ("template_original.html", "out/scan.html")):
-        html = open(tpl).read().replace("__DATA__", D, 1).replace("__GDATA__", G, 1)
+        html = open(tpl).read().replace("__DATA__", D, 1).replace("__GDATA__", G, 1).replace("__NEWS__", (open("news.json").read().replace("</", "<\\/") if os.path.exists("news.json") else '{"items":[]}'), 1)
         open(out, "w").write(html)
     log("Rendered out/scan_visual.html and out/scan.html")
 
