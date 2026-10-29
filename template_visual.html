@@ -366,6 +366,30 @@ body{font-size:16.5px}
 /* ---- news desk ---- */
 .mkts{grid-template-columns:repeat(4,minmax(0,1fr))!important;max-width:1240px!important}
 @media (max-width:900px){.mkts{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+/* ---- bull vs bear (drawdown from all-time high) ---- */
+.ddsum{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+@media (max-width:900px){.ddsum{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.ddsum{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ddmix{display:flex;height:16px;border-radius:8px;overflow:hidden;gap:2px;margin:4px 0 2px}
+.ddmix i{display:block;min-width:2px}
+.ddmixl{display:flex;justify-content:space-between;font:500 .74rem var(--f-data);color:var(--muted);flex-wrap:wrap;gap:4px 12px}
+.ddcols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:1000px){.ddcols{grid-template-columns:1fr}}
+.ddbox{background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:14px 16px;min-width:0;border-top:4px solid var(--c)}
+.ddbox h3{font-size:1rem;margin-bottom:2px} .ddbox>p{margin:0 0 8px;font-size:.78rem;color:var(--muted)}
+.ddrank{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;max-height:560px;overflow:auto}
+.ddrank li{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:8px;align-items:center;padding:6px 0;border-top:1px solid var(--soft);font-size:.86rem}
+.ddrank li>span:first-child{font:600 .76rem var(--f-data);color:var(--muted);text-align:right}
+.ddrank .nm2{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ddrank .nm2 b{font-family:var(--f-data);margin-right:6px}
+.ddrank .nm2 small{color:var(--muted)}
+.ddrank .pv{font:700 .86rem var(--f-data);text-align:right}
+.ddrank .pv small{display:block;font:500 .66rem var(--f-data);color:var(--muted)}
+.ddbar{position:relative;display:inline-block;width:110px;height:8px;border-radius:4px;background:var(--soft);vertical-align:middle;overflow:hidden}
+.ddbar i{position:absolute;inset:0 0 0 auto;background:var(--c);border-radius:4px}
+.ddz{font:700 .64rem/1 var(--f-data);letter-spacing:.04em;text-transform:uppercase;padding:4px 7px;border-radius:999px;background:var(--cs);color:var(--c);white-space:nowrap}
+.ddnew{font:700 .62rem/1 var(--f-data);text-transform:uppercase;padding:3px 6px;border-radius:5px;background:var(--bad-soft);color:var(--bad);margin-left:6px}
+.ddrec{background:var(--up-soft);color:var(--up)}
 /* ---- earnings calendar ---- */
 .etoday{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
 .ebox{background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
@@ -627,6 +651,7 @@ body{font-size:16.5px}
   <button class="tab" role="tab" id="gt-decide" aria-controls="gp-decide" aria-selected="true">Decision list</button>
   <button class="tab" role="tab" id="gt-perf" aria-controls="gp-perf" aria-selected="false">Markets &amp; performance</button>
   <button class="tab" role="tab" id="gt-scan" aria-controls="gp-scan" aria-selected="false">Full scan</button>
+  <button class="tab" role="tab" id="gt-dd" aria-controls="gp-dd" aria-selected="false">Bull vs bear</button>
 </nav>
 <div class="live" id="glive" data-state="off" role="status" aria-live="polite">
   <span class="ldot" aria-hidden="true"></span>
@@ -686,6 +711,28 @@ body{font-size:16.5px}
   <section>
     <div class="sechead"><h2>Indices, commodities and currencies</h2><p>Your macro tickers side by side.</p></div>
     <div class="ladder"><table id="gmacroT"></table></div>
+  </section>
+</div>
+
+<div class="panel" id="gp-dd" role="tabpanel" aria-labelledby="gt-dd" hidden>
+  <section>
+    <div class="sechead"><h2>Bull or bear: distance from the all-time high</h2><p>How far each ticker trades below its highest price ever. The usual rule of thumb: within 10% of the high is bull-market territory, 10–20% down is a correction, 20% or more is a bear market. Tap a zone to filter the table. Follows the market buttons above.</p></div>
+    <div class="scanbar" id="ddAsof" role="note"></div>
+    <div class="controls" style="margin:12px 0 0"><div class="seg" id="ddsize" role="group" aria-label="Size"><button data-v="1">Large caps ($10B+)</button><button data-v="0">Everything on the list</button></div></div>
+  </section>
+  <section><div class="ddsum" id="ddsum"></div>
+    <div style="margin-top:12px"><div class="ddmix" id="ddmix"></div><div class="ddmixl" id="ddmixl"></div></div></section>
+  <section><div class="ddcols" id="ddcols"></div></section>
+  <section>
+    <div class="sechead"><h2>Every ticker by drawdown</h2><p>Price against the all-time high (intraday, split-adjusted) and the 52-week range. "New" marks tickers that crossed the 20% bear line in the last month; "Recovered" marks those that climbed back above it.</p></div>
+    <div class="controls">
+      <input id="ddq" type="search" placeholder="Search ticker or name" aria-label="Search tickers">
+      <select id="ddg" aria-label="Group"></select>
+      <select id="ddsort" aria-label="Sort"><option value="dd">Deepest drawdown first</option><option value="-dd">Closest to the high first</option><option value="h52">Furthest from 52-week high</option><option value="lo">Most above 52-week low</option></select>
+      <span class="count" id="ddcount"></span>
+    </div>
+    <div class="dtable"><table id="ddtable"></table></div>
+    <p class="note" style="margin-top:8px">Sources: Yahoo Finance full monthly history for stocks, ETFs, indices and commodities; Binance weekly history (Yahoo where it goes back further) for crypto. Treasury yields, currencies, the VIX and coin-to-coin ratios are left out because an all-time high means little for them. Not investment advice.</p>
   </section>
 </div>
 
@@ -1333,11 +1380,58 @@ function setSeg(k){ aseg=k; try{localStorage.setItem("aseg",k)}catch(e){}
   gcc="all"; gdd="all"; ["gcl","gscl","ggr","gdd"].forEach(id=>{const el=document.getElementById(id); if(el) el.value="all";});
   document.querySelectorAll("#asegs .aseg").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k));
   drawGlobal(); if(!document.getElementById("gp-perf").hidden) drawGBars(); }
-function drawGlobal(){ drawGMacro(); drawGDsum(); drawGCards(); drawGTable(); drawGLadder(); drawGYields(); drawGLedger(); drawGAlerts(); segShow(); if(!document.getElementById("gp-perf").hidden) drawGBars(); }
+function drawGlobal(){ drawGMacro(); drawGDsum(); drawGCards(); drawGTable(); drawGLadder(); drawGYields(); drawGLedger(); drawGAlerts(); segShow(); if(!document.getElementById("gp-perf").hidden) drawGBars(); if(typeof drawDD==="function"&&!document.getElementById("gp-dd").hidden) drawDD(); }
 drawGlobal();
+// ---- bull vs bear (drawdown from all-time high)
+const DDJ = __DD__;
+const DDM = {}; (DDJ.items||[]).forEach(r=>DDM[r.t]=r);
+const DDZ=[["near","At or near record","Within 5% of the all-time high","--up"],["pull","Bull-market dip","5–10% below the high","--mom"],["corr","Correction","10–20% below the high","--side"],["bear","Bear market","20–40% below the high","--down"],["deep","Deep bear","40% or more below the high","--bad"]];
+let ddz=null;
+const ddZone=d=>d>-5?"near":d>-10?"pull":d>-20?"corr":d>-40?"bear":"deep";
+function ddRows(){ const out=[]; for(const o of GI){ const r=DDM[o.t]; if(!r||!r.ath||(ddBig&&!ddIsBig(r,o))) continue;
+    const px=(o.live&&o.px)?o.px:(r.px||o.px), ath=Math.max(r.ath,px), dd=(px/ath-1)*100;
+    const pm=o.m!=null?px/(1+o.m/100):null, ddPrev=(pm!=null&&r.athD<new Date(Date.now()-31*864e5).toISOString().slice(0,7))?(pm/ath-1)*100:null;
+    const h52=r.hi52?(px/Math.max(r.hi52,px)-1)*100:null, lo=r.lo52?(px/Math.min(r.lo52,px)-1)*100:null;
+    out.push({o,r,px,ath,dd,z:ddZone(dd),h52,lo,newBear:ddPrev!=null&&ddPrev>-20&&dd<=-20,recov:ddPrev!=null&&ddPrev<=-20&&dd>-20}); } return out; }
+const ddPct=x=>x==null?"–":(x>0?"+":"")+x.toFixed(Math.abs(x)<10||Math.abs(x)>=99?1:0)+"%";
+let ddBig=true; try{ if(localStorage.getItem("ddBig")==="0") ddBig=false; }catch(e){}
+const ddLev=o=>/\b(daily|[23]x|ultra(pro)?|leveraged|inverse)\b/i.test(o.n||"");
+const ddIsBig=(r,o)=>!ddLev(o)&&(r.qt==="INDEX"||r.qt==="FUTURE"||r.qt==="ETF"||(r.mcap||0)>=1e10);
+const ddPx=x=>x==null?"–":x>=1000?x.toLocaleString("en-US",{maximumFractionDigits:0}):x>=1?x.toFixed(2):x.toPrecision(3);
+const ddMon=s=>{ if(!s) return "–"; const [y,m]=s.split("-"); return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][+m-1]+" "+y; };
+function drawDD(){
+  const R=ddRows(), Z=Object.fromEntries(DDZ.map(z=>[z[0],z]));
+  { const h=DDJ.iso?(Date.now()-Date.parse(DDJ.iso))/36e5:99; const live=R.some(x=>x.o.live);
+    document.getElementById("ddAsof").innerHTML=`<svg class="scal" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><div><div class="sl">All-time highs checked</div><div class="sd">${esc(DDJ.asof||"–")}</div></div><span class="age ${h<12?"fresh":""}">${h<1?"Within the hour":h<24?Math.round(h)+" h ago":Math.floor(h/24)+" days ago"}</span><span class="sn">${R.length} tickers in this view${ddBig?" (large caps: companies and coins worth $10B+, plus indices, unleveraged ETFs and commodities)":""}. ${R.filter(x=>x.dd<=-20).length} (${R.length?Math.round(100*R.filter(x=>x.dd<=-20).length/R.length):0}%) are 20% or more below their all-time high.${live?" Live prices are applied where available.":""}</span>`; }
+  document.querySelectorAll("#ddsize button").forEach(b=>{ b.setAttribute("aria-pressed",(b.dataset.v==="1")===ddBig); b.onclick=()=>{ ddBig=b.dataset.v==="1"; try{localStorage.setItem("ddBig",ddBig?"1":"0")}catch(e){} drawDD(); }; });
+  document.getElementById("ddsum").innerHTML=DDZ.map(([k,l,d,c])=>{const n=R.filter(x=>x.z===k).length;return `<button class="vd" data-z="${k}" aria-pressed="${ddz===k}" style="--c:var(${c});--cs:var(${c}-soft)"><span class="k">${n}</span><span class="t">${l}</span><span class="d">${d}</span></button>`}).join("");
+  document.querySelectorAll("#ddsum .vd").forEach(b=>b.onclick=()=>{ddz=ddz===b.dataset.z?null:b.dataset.z;drawDD();});
+  document.getElementById("ddmix").innerHTML=DDZ.map(([k,l,d,c])=>{const n=R.filter(x=>x.z===k).length;return n?`<i style="flex:${n};background:var(${c})" title="${l}: ${n}"></i>`:""}).join("");
+  const bull=R.filter(x=>x.dd>-10).length, bear=R.filter(x=>x.dd<=-20).length;
+  document.getElementById("ddmixl").innerHTML=`<span><b class="pos">${bull}</b> in bull territory (within 10%)</span><span><b style="color:var(--side)">${R.length-bull-bear}</b> in correction</span><span><b class="neg">${bear}</b> in a bear market (20%+ down)</span>`;
+  const li=(L,f)=>L.length?`<ol class="ddrank">${L.map((x,i)=>`<li><span>${i+1}.</span><span class="nm2"><b>${esc(x.o.t)}</b><small>${esc(x.o.n||"")}</small></span><span class="pv" style="color:var(${Z[x.z][3]})">${f(x)}</span></li>`).join("")}</ol>`:`<p class="note">None in this view.</p>`;
+  const near=[...R].filter(x=>x.dd>-10).sort((a,b)=>b.dd-a.dd);
+  const worst=[...R].filter(x=>x.dd<=-20).sort((a,b)=>a.dd-b.dd);
+  const entering=[...R].filter(x=>x.newBear||(x.dd<=-20&&x.dd>-25)||(x.dd>-20&&x.dd<=-17)).sort((a,b)=>(b.newBear-a.newBear)||(b.dd-a.dd));
+  document.getElementById("ddcols").innerHTML=`
+   <div class="ddbox" style="--c:var(--up)"><h3>Bull-market territory</h3><p>Within 10% of the all-time high, closest first.</p>${li(near,x=>ddPct(x.dd)+`<small>high ${ddMon(x.r.athD)}</small>`)}</div>
+   <div class="ddbox" style="--c:var(--down)"><h3>Entering bear-market territory</h3><p>Crossed the 20% line in the last month (marked New), sit just past it (20–25% down), or are close to it (17–20% down).</p>${li(entering,x=>ddPct(x.dd)+(x.newBear?`<small style="color:var(--bad)">new this month</small>`:x.dd>-20?`<small>near the line</small>`:`<small>high ${ddMon(x.r.athD)}</small>`))}</div>
+   <div class="ddbox" style="--c:var(--bad)"><h3>In a bear market</h3><p>20% or more below the all-time high, deepest first.</p>${li(worst,x=>ddPct(x.dd)+`<small>high ${ddMon(x.r.athD)}</small>`)}</div>`;
+  const gs=document.getElementById("ddg"), gv=gs.value||"all", grs=[...new Set(R.map(x=>x.o.g))].sort();
+  gs.innerHTML=`<option value="all">All groups</option>`+grs.map(g=>`<option ${g===gv?"selected":""}>${esc(g)}</option>`).join("");
+  const q=(document.getElementById("ddq").value||"").trim().toLowerCase(), so=document.getElementById("ddsort").value;
+  let L=R.filter(x=>(!ddz||x.z===ddz)&&(gv==="all"||x.o.g===gv)&&(!q||x.o.t.toLowerCase().includes(q)||(x.o.n||"").toLowerCase().includes(q)));
+  const key={dd:x=>x.dd,"-dd":x=>-x.dd,h52:x=>x.h52??0,lo:x=>-(x.lo??0)}[so]||(x=>x.dd); L.sort((a,b)=>key(a)-key(b));
+  document.getElementById("ddcount").textContent=`${L.length} of ${R.length}`;
+  document.getElementById("ddtable").innerHTML=`<thead><tr><th class="l">Ticker</th><th class="l">Group</th><th>Price</th><th>All-time high</th><th class="l">Below the high</th><th>From 52W high</th><th>From 52W low</th><th class="l">Zone</th></tr></thead><tbody>`+
+   L.map(x=>{const z=Z[x.z];return `<tr><td class="l"><span class="tk">${esc(x.o.t)}</span>${x.newBear?'<span class="ddnew">New</span>':x.recov?'<span class="ddnew ddrec">Recovered</span>':""}<span class="nm">${esc(x.o.n||"")}</span></td><td class="l note">${esc(x.o.g||x.o.cls||"")}${x.r.mcap?`<span class="nm">${x.r.mcap>=1e12?"$"+(x.r.mcap/1e12).toFixed(2)+" T":"$"+(x.r.mcap/1e9).toFixed(x.r.mcap>=1e10?0:1)+" B"}</span>`:""}</td><td class="n">${ddPx(x.px)}</td><td class="n">${ddPx(x.ath)}<span class="nm" style="text-align:right;max-width:none">${ddMon(x.r.athD)}</span></td>
+     <td class="l"><span class="ddbar" style="--c:var(${z[3]})"><i style="width:${Math.min(100,-x.dd)}%"></i></span> <b class="mono" style="color:var(${z[3]})">${ddPct(x.dd)}</b></td><td class="n">${ddPct(x.h52)}</td><td class="n ${x.lo>=20?"pos":""}">${ddPct(x.lo)}</td><td class="l"><span class="ddz" style="--c:var(${z[3]});--cs:var(${z[3]}-soft)">${z[1]}</span></td></tr>`}).join("")+`</tbody>`;
+}
+["ddq","ddg","ddsort"].forEach(id=>document.getElementById(id).addEventListener(id==="ddq"?"input":"change",drawDD));
+
 // ---- global tabs
 const GTABS=[...document.querySelectorAll("#m-global .tab")];
-function showGTab(id){ GTABS.forEach(t=>{const on=t.id===id; t.setAttribute("aria-selected",on); document.getElementById(t.getAttribute("aria-controls")).hidden=!on;}); try{localStorage.setItem("gtab",id)}catch(e){} if(id==="gt-perf") drawGBars(); }
+function showGTab(id){ GTABS.forEach(t=>{const on=t.id===id; t.setAttribute("aria-selected",on); document.getElementById(t.getAttribute("aria-controls")).hidden=!on;}); try{localStorage.setItem("gtab",id)}catch(e){} if(id==="gt-perf") drawGBars(); if(id==="gt-dd") drawDD(); }
 GTABS.forEach(t=>t.onclick=()=>showGTab(t.id));
 try{const s=localStorage.getItem("gtab"); if(s&&document.getElementById(s)) showGTab(s);}catch(e){}
 // ---- market switch
@@ -1540,7 +1634,7 @@ function yieldCurve(Y){ var W=560,H=230,l=46,r=16,t=16,b=36; var order=["US13W",
 function mountVisuals(){
   // market switch + tab icons
   var mb=document.querySelectorAll(".mk-btn"); if(mb[0]&&!mb[0].querySelector(".ic")){ mb[0].insertAdjacentHTML("afterbegin",`<span class="mki">${ic("rupee")}</span>`); mb[1].insertAdjacentHTML("afterbegin",`<span class="mki">${ic("globe")}</span>`); }
-  var TI={"t-decide":"target","t-sectors":"chart","t-scan":"pulse","gt-decide":"target","gt-perf":"chart","gt-scan":"pulse"};
+  var TI={"t-decide":"target","t-sectors":"chart","t-scan":"pulse","gt-decide":"target","gt-perf":"chart","gt-scan":"pulse","gt-dd":"scale"};
   Object.keys(TI).forEach(id=>{var el=document.getElementById(id); if(el&&!el.querySelector(".ic")) el.insertAdjacentHTML("afterbegin",ic(TI[id],"sm"));});
   var HI={"Market backdrop":"globe","Verdicts":"target","Key reads":"sparkles","Sector ladder":"layers","Full ledger":"doc","Where each stock stands":"target","Buy candidates":"check","Strong but stretched: wait for a pullback":"clock","All stocks":"doc","Best and worst sectors":"trendUp","Sector returns":"chart","5-year path":"pulse","All sector and theme indices":"layers","Your watchlist by sector":"wallet","US economy and crypto market":"bank","Where each ticker stands":"target","All tickers":"doc","Group ladder":"layers","Group returns":"chart","US Treasury yields":"doc","Indices, commodities and currencies":"globe","Full technical scan":"pulse"};
   document.querySelectorAll(".sechead h2").forEach(h=>{ var k=h.textContent.trim(); if(HI[k]&&!h.querySelector(".ic")) h.insertAdjacentHTML("afterbegin",`<span class="h2i">${ic(HI[k])}</span>`); });
